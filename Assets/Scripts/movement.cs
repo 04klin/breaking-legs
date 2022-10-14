@@ -25,7 +25,7 @@ public class movement : MonoBehaviour
         velocity = new Vector2(0, rb.velocity.y);
 
         if (Input.GetKey("a"))
-        {
+        {   
             velocity.x -= speed;
             transform.localScale = new Vector3(-1, 1, 1);
         }
