@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 460048013}
   - component: {fileID: 460048017}
   - component: {fileID: 460048016}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RadishEnemyIdle_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
