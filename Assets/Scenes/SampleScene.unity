@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 1.29, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -302,8 +302,8 @@ GameObject:
   - component: {fileID: 935861392}
   - component: {fileID: 935861391}
   - component: {fileID: 935861393}
-  - component: {fileID: 935861395}
   - component: {fileID: 935861394}
+  - component: {fileID: 935861396}
   m_Layer: 0
   m_Name: Billy Updated_0
   m_TagString: Untagged
@@ -402,7 +402,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &935861394
 Rigidbody2D:
@@ -425,7 +425,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &935861395
+--- !u!114 &935861396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -438,6 +438,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jump_height: 5
+  rb: {fileID: 935861394}
+  player_collider: {fileID: 935861393}
+  ground_layer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1965515502
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +458,7 @@ GameObject:
   - component: {fileID: 1965515506}
   - component: {fileID: 1965515508}
   - component: {fileID: 1965515507}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
