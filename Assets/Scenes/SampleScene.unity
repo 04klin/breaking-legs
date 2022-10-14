@@ -593,6 +593,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jump_height: 5
+  rb: {fileID: 935861394}
+  player_collider: {fileID: 935861393}
+  ground_layer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!95 &935861396
 Animator:
   serializedVersion: 4
