@@ -598,7 +598,7 @@ MonoBehaviour:
   player_collider: {fileID: 935861393}
   ground_layer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
 --- !u!95 &935861396
 Animator:
   serializedVersion: 4
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 1965515506}
   - component: {fileID: 1965515508}
   - component: {fileID: 1965515507}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
