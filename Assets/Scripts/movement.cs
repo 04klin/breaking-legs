@@ -27,10 +27,12 @@ public class movement : MonoBehaviour
         if (Input.GetKey("a"))
         {
             velocity.x -= speed;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         if(Input.GetKey("d"))
         {
             velocity.x += speed;
+            transform.localScale = new Vector3(1, 1, 1);
         }
         if (Input.GetKey("space") && is_grounded())
         {
