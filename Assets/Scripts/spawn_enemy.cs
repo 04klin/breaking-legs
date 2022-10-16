@@ -7,6 +7,7 @@ public class spawn_enemy : MonoBehaviour
 {
 
     public GameObject enemy;
+    private float time = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +18,19 @@ public class spawn_enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("p"))
+        
+    }
+
+    private void FixedUpdate()
+    {
+        time += Time.deltaTime;
+        //creates an enemy
+        if (time >3)
         {
-            Instantiate(enemy, transform.position, transform.rotation);
+            Instantiate(enemy, new Vector3(5,0,0), transform.rotation);
+            time = 0;
         }
     }
+
+
 }
