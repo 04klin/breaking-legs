@@ -1577,9 +1577,21 @@ PrefabInstance:
       propertyPath: billy_pos
       value: 
       objectReference: {fileID: 1624395871}
+    - target: {fileID: 33711243039343363, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
+      propertyPath: enemy_collider
+      value: 
+      objectReference: {fileID: 895146965}
+    - target: {fileID: 33711243039343363, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
+      propertyPath: ground_layer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
       propertyPath: m_Name
       value: RadishEnemyIdle_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
       propertyPath: m_RootOrder
@@ -1630,6 +1642,11 @@ PrefabInstance:
 --- !u!1 &895146963 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
+  m_PrefabInstance: {fileID: 895146962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &895146965 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 33711243039343361, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
   m_PrefabInstance: {fileID: 895146962}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1624395864
@@ -1726,6 +1743,9 @@ MonoBehaviour:
   ground_layer:
     serializedVersion: 2
     m_Bits: 8
+  enemy_layer:
+    serializedVersion: 2
+    m_Bits: 64
   player_animate: {fileID: 1624395866}
   speed: 5
   jump_height: 5

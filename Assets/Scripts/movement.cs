@@ -10,6 +10,7 @@ public class movement : MonoBehaviour
     public Rigidbody2D rb;
     public BoxCollider2D player_collider;
     public LayerMask ground_layer;
+    public LayerMask enemy_layer;
     public Animator player_animate;
 
     [Header("Character Atributes")]
@@ -104,8 +105,12 @@ public class movement : MonoBehaviour
 
     private bool is_grounded()
     {
-        bool what = Physics2D.BoxCast(player_collider.bounds.center, player_collider.bounds.size, 0f, Vector2.down,0.1f, ground_layer);
-         
+        bool what = Physics2D.BoxCast(player_collider.bounds.center, player_collider.bounds.size, 0f, Vector2.down, 0.1f, ground_layer) ||
+            Physics2D.BoxCast(player_collider.bounds.center, player_collider.bounds.size, 0f, Vector2.down, 0.1f, enemy_layer);
+
+
+
+
         return what;
     }
 
