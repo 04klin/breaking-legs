@@ -72,7 +72,6 @@ public class movement : MonoBehaviour
 
         if (Input.GetKey("space") && !jumping)
         {
-            Debug.Log("jump");
             velocity = Vector2.up * jump_height;
             jumping = true;
         }

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class death : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+
     public BoxCollider2D player_collider;
-    public BoxCollider2D enemy_collider;
 
     void Start()
     {

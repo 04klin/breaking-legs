@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class enemy_movement : MonoBehaviour
 {
     public float speed = 3f;
-    public Transform billy_pos;
+    private Transform billy_pos;
     public Rigidbody2D rb;
     private Vector2 velocity;
     public LayerMask ground_layer; 
@@ -17,7 +17,7 @@ public class enemy_movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        billy_pos = GameObject.FindGameObjectsWithTag("Player")[0].transform;
     }
 
     // Update is called once per frame

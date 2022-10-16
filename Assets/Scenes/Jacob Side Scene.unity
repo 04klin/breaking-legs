@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff52cc4c7c855ac468dc50c66e355fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1147986639}
+  enemy: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
 --- !u!4 &237290641
 Transform:
   m_ObjectHideFlags: 0
@@ -166,74 +166,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1147986638
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 33711243039343363, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: billy_pos
-      value: 
-      objectReference: {fileID: 1340541676}
-    - target: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_Name
-      value: RadishEnemyIdle_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 33711243039343390, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
---- !u!1 &1147986639 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
-  m_PrefabInstance: {fileID: 1147986638}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1340541669
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +185,7 @@ GameObject:
   - component: {fileID: 1340541670}
   m_Layer: 0
   m_Name: Billy Updated_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,8 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e824af18356117744901e8dfb3cf7d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_collider: {fileID: 0}
-  enemy_collider: {fileID: 0}
+  player_collider: {fileID: 1340541674}
 --- !u!95 &1340541671
 Animator:
   serializedVersion: 4
@@ -328,6 +261,9 @@ MonoBehaviour:
   ground_layer:
     serializedVersion: 2
     m_Bits: 8
+  enemy_layer:
+    serializedVersion: 2
+    m_Bits: 0
   player_animate: {fileID: 1340541671}
   speed: 5
   jump_height: 5
