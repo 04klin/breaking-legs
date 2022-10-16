@@ -28,7 +28,7 @@ public class enemy_movement : MonoBehaviour
             velocity += Vector2.left;
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        if (transform.position.x <= billy_pos.position.x)
+        if (transform.position.x < billy_pos.position.x)
         {
             //move and flip sprite to face left
             velocity += Vector2.right;

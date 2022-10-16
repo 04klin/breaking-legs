@@ -14,12 +14,24 @@ public class movement : MonoBehaviour
     public LayerMask ground_layer;
     public bool grounded = true;
     public bool jumping = false;
+    public enum animate_states
+    {
+        idle,
+        walking,
+        falling,
+        raising
+    }
+    public animate_states current_state = animate_states.idle;
+
+    public Animator player_animate;
+
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -59,9 +71,30 @@ public class movement : MonoBehaviour
             velocity = Vector2.up * jump_height;
             jumping = true;
         }
+        
 
+        //set the state for the animation player
+        if (grounded && velocity.x != 0)
+        {
+            current_state = animate_states.walking;
+        } 
+        else if (grounded && velocity.x == 0)
+        {
+            current_state = animate_states.idle;
+        }
+        if (jumping && rb.velocity.y > 0)
+        {
+            current_state = animate_states.raising;
+        }
+        else if (jumping && rb.velocity.y < 0)
+        {
+            current_state = animate_states.falling;
+        }
+
+
+
+        player_animate.SetInteger("state", (int)current_state);
         rb.velocity = velocity;
-
     }
 
     private bool is_grounded()

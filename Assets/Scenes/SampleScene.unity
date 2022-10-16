@@ -631,6 +631,8 @@ MonoBehaviour:
     m_Bits: 8
   grounded: 0
   jumping: 0
+  current_state: 0
+  player_animate: {fileID: 935861396}
 --- !u!95 &935861396
 Animator:
   serializedVersion: 4
