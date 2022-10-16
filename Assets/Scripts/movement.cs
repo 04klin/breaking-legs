@@ -6,27 +6,31 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jump_height = 5f;
+    [Header("Components needed")]
     public Rigidbody2D rb;
     public BoxCollider2D player_collider;
-    private Vector2 velocity;
     public LayerMask ground_layer;
-    public bool grounded = true;
-    public bool jumping = false;
-    public enum animate_states
+    public Animator player_animate;
+
+    [Header("Character Atributes")]
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float jump_height = 5f;
+    public float timer_bar;
+
+
+    private Vector2 velocity;
+    private bool grounded = true;
+    private bool jumping = false;
+    private enum animate_states
     {
         idle,
         walking,
         falling,
         raising
     }
-    public animate_states current_state = animate_states.idle;
+    private animate_states current_state = animate_states.idle;
 
-    public Animator player_animate;
-
-    
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +95,7 @@ public class movement : MonoBehaviour
             current_state = animate_states.falling;
         }
 
+        
 
 
         player_animate.SetInteger("state", (int)current_state);
