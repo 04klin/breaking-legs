@@ -1700,7 +1700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935861390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2007, y: 2.1285, z: 0}
+  m_LocalPosition: {x: -2.45, y: 5.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1775,9 +1775,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   player_animate: {fileID: 935861396}
+  timer_bar: {fileID: 1645919312}
   speed: 5
   jump_height: 5
-  timer_bar: 0
+  allowed_jump_percent: 0.78
+  percent_jump_subtract: 0.01
 --- !u!95 &935861396
 Animator:
   serializedVersion: 4
@@ -1840,7 +1842,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff52cc4c7c855ac468dc50c66e355fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
+  floor_collider: {fileID: 1965515507}
 --- !u!4 &1477191868
 Transform:
   m_ObjectHideFlags: 0
@@ -1891,10 +1894,10 @@ RectTransform:
   m_Father: {fileID: 1772066811}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 492.21387, y: 348.80127}
-  m_SizeDelta: {x: 371.3141, y: 45.9986}
+  m_AnchorMin: {x: 0.98411644, y: 0.9678821}
+  m_AnchorMax: {x: 0.98411644, y: 0.9678821}
+  m_AnchoredPosition: {x: -185.66, y: -20.499}
+  m_SizeDelta: {x: 371.3141, y: 40.9979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1645919311
 MonoBehaviour:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
 public class spawn_enemy : MonoBehaviour
@@ -8,6 +9,7 @@ public class spawn_enemy : MonoBehaviour
 
     public GameObject enemy;
     private float time = 0;
+    public CompositeCollider2D floor_collider;
     
 
     // Start is called before the first frame update
@@ -16,19 +18,17 @@ public class spawn_enemy : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void FixedUpdate()
+    private void Update()
     {
         time += Time.deltaTime;
         //creates an enemy
         if (time >3)
         {
-            Instantiate(enemy, new Vector3(Random.Range(-7f,7f),10,0), transform.rotation);
+            //world pos to the bounds of the tilemap
+            float left_side = floor_collider.bounds.center.x - floor_collider.bounds.size.x/2;
+            float right_side = floor_collider.bounds.center.x + floor_collider.bounds.size.x / 2;
+
+            Instantiate(enemy, new Vector3(Random.Range(left_side, right_side),10,0), transform.rotation);
             time = 0;
         }
     }

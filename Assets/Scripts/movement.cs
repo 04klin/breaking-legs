@@ -12,11 +12,13 @@ public class movement : MonoBehaviour
     public LayerMask ground_layer;
     public LayerMask enemy_layer;
     public Animator player_animate;
+    public timer_bar_control timer_bar;
 
     [Header("Character Atributes")]
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jump_height = 5f;
-    public float timer_bar;
+    [SerializeField] private float allowed_jump_percent = .1f;
+    [SerializeField] private float percent_jump_subtract = .1f;
 
 
     private Vector2 velocity;
@@ -54,8 +56,8 @@ public class movement : MonoBehaviour
         }
 
         //flip sprite based on what direction player is going
-        if (velocity.x != 0 && transform.localScale.x != velocity.x)
-            transform.localScale = new Vector3(velocity.x, 1, 1);
+        if (velocity.x != 0 && transform.localScale.x != velocity.x * Math.Abs(transform.localScale.x))
+            transform.localScale = new Vector3(velocity.x * Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
         velocity.x *= speed;
 
@@ -70,10 +72,11 @@ public class movement : MonoBehaviour
         }
 
 
-        if (Input.GetKey("space") && !jumping)
+        if (Input.GetKey("space") && !jumping && timer_bar.get_percent_full() > allowed_jump_percent)
         {
             velocity = Vector2.up * jump_height;
             jumping = true;
+            timer_bar.subtract_percent(percent_jump_subtract);
         }
         
 

@@ -8,6 +8,7 @@ public class death : MonoBehaviour
 
 
     public BoxCollider2D player_collider;
+    
 
     void Start()
     {
