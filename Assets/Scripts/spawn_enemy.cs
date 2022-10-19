@@ -11,7 +11,9 @@ public class spawn_enemy : MonoBehaviour
     private float time = 0;
     public CompositeCollider2D floor_collider;
     public Camera camera;
-    
+    [SerializeField] private bool spawnEnemy;
+    [SerializeField] private int spawnSpeed;
+        
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class spawn_enemy : MonoBehaviour
     {
         time += Time.deltaTime;
         //creates an enemy
-        if (time >3)
+        if (time >spawnSpeed)
         {
             //world pos to the bounds of the tilemap
             float left_side_max = floor_collider.bounds.center.x - floor_collider.bounds.size.x/2;
@@ -43,8 +45,11 @@ public class spawn_enemy : MonoBehaviour
                 right_side = right_side_max;
             }
             
-
-            Instantiate(enemy, new Vector3(Random.Range(left_side, right_side),10,0), transform.rotation);
+            if(spawnEnemy == true)
+            {
+                Instantiate(enemy, new Vector3(Random.Range(left_side, right_side), 10, 0), transform.rotation);
+                
+            }
             time = 0;
         }
     }
