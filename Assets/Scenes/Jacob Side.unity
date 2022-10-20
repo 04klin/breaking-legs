@@ -1446,6 +1446,7 @@ GameObject:
   - component: {fileID: 490759865}
   - component: {fileID: 490759864}
   - component: {fileID: 490759866}
+  - component: {fileID: 490759867}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
@@ -1532,6 +1533,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3814cf6ec312ca48be91f75411e4726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 490759867}
+  flipper: 0
+  sprite_renderer: {fileID: 0}
+  bullet_speed: 10
+  mouse_location: {x: 0, y: 0}
+  spawn_location: {x: 0, y: 0}
+  direction_vector: {x: 0, y: 0}
+  angle: 0
+  destroy: 0
+  flight_time_max: 0
+  flight_time: 0
+--- !u!50 &490759867
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490759863}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,7 +1602,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.49685526, g: 0.69252264, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1939,7 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff52cc4c7c855ac468dc50c66e355fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 490759863}
   floor_collider: {fileID: 1965515507}
 --- !u!4 &1477191868
 Transform:
@@ -2099,7 +2132,6 @@ MonoBehaviour:
   angle_deg: 0
   recoil_amplitude: 0
   shoot_speed: 0
-  bullet_speed: 0
 --- !u!212 &1669719360
 SpriteRenderer:
   m_ObjectHideFlags: 0

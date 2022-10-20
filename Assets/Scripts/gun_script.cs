@@ -26,8 +26,7 @@ public class gun_script : MonoBehaviour
     private float recoil_angle = 0;
     [SerializeField] private float shoot_speed;
 
-    [Header("Bullet Atributes")]
-    [SerializeField] private float bullet_speed;
+
 
 
     void Update()
@@ -85,12 +84,11 @@ public class gun_script : MonoBehaviour
 
         //start of bullet and recoil
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            float slope = (mouse_location.y - tip_point.y) / (mouse_location.x - tip_point.x);
-            Instantiate(bullet, tip_point, transform.rotation);
-
-
+            GameObject new_bullet = Instantiate(bullet, tip_point, transform.rotation);
+            new_bullet.GetComponent<bullet_script>().flipper = flipper;
+            
         }
 
 
@@ -127,70 +125,5 @@ public class gun_script : MonoBehaviour
         }
         
     }
-
-
-
-
-
-
-
-    /*
-     
-    if (angle_deg >= -90 && angle_deg <= 90)
-        {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-
-            //convert tip_offset to a worldspace point
-            rotated_tip_offset = rotate_point(tip_offset, angle);
-            tip_point = new Vector2(transform.position.x + rotated_tip_offset.x, transform.position.y + rotated_tip_offset.y);
-
-
-            //fancy voodoo magic that calculates the couter rotation angle so the tip of the gun points to the mouse instead of the center of the rotation
-            float length_handle_mouse = Vector2.Distance(gun_location, mouse_location);
-            float height_gun = tip_offset.y;
-            Vector2 point1 = gun_location;
-            Vector2 point2 = new Vector2(gun_location.x, gun_location.y + height_gun);
-            Vector2 point3 = new Vector2(gun_location.x + length_handle_mouse, gun_location.y);
-
-            float counter_angle = 90 - Vector2.Angle(point1 - point2, point3 - point2); //angle between 3 points
-
-
-
-            //apply proper rotation on the sprite
-            transform.rotation = Quaternion.Euler(0, 0, angle_deg - counter_angle);
-        }
-        else
-        {
-            
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-
-            angle = angle - Mathf.PI; //changed
-            angle_deg = angle_deg - 180; //changed
-
-            Vector2 temp_tip_offset = new Vector2(-tip_offset.x, tip_offset.y); //changed
-
-
-            //convert tip_offset to a worldspace point
-            rotated_tip_offset = rotate_point(temp_tip_offset, angle);
-            tip_point = new Vector2(transform.position.x + rotated_tip_offset.x, transform.position.y + rotated_tip_offset.y);
-
-
-            //fancy voodoo magic that calculates the couter rotation angle so the tip of the gun points to the mouse instead of the center of the rotation
-            float length_handle_mouse = Vector2.Distance(gun_location, mouse_location);
-            float height_gun = tip_offset.y;
-            Vector2 point1 = gun_location;
-            Vector2 point2 = new Vector2(gun_location.x, gun_location.y + height_gun);
-            Vector2 point3 = new Vector2(gun_location.x + length_handle_mouse, gun_location.y);
-
-            float counter_angle = 90 - Vector2.Angle(point1 - point2, point3 - point2); //angle between 3 points
-
-
-
-            //apply proper rotation on the sprite
-            transform.rotation = Quaternion.Euler(0, 0, angle_deg + counter_angle); //changed
-        }
-
-    */
-
 
 }

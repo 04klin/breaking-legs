@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class timer_bar_control : MonoBehaviour
+public class timer_bar_control : MonoBehaviour //kevin side takes this 
 {
 
     public Slider slider;
@@ -39,7 +39,7 @@ public class timer_bar_control : MonoBehaviour
         return slider.value;
     }
 
-    private void Update()
+    void Update()
     {
         slider.value -= speed;
     }
