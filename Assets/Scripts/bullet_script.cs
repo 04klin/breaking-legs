@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class bullet_script : MonoBehaviour
@@ -8,6 +9,9 @@ public class bullet_script : MonoBehaviour
     public Rigidbody2D rb;
     public float flipper;
     public SpriteRenderer sprite_renderer;
+    public LayerMask bullet_layer;
+    public LayerMask ground_layer;
+    public LayerMask enemy_layer;
 
     [Header("Bullet Atributes")]
     [SerializeField] private float bullet_speed;
@@ -18,9 +22,17 @@ public class bullet_script : MonoBehaviour
 
     [Header("Duration of flight")]
     [SerializeField] private bool destroy;
+    [SerializeField] private bool draw_hitbox;
     [SerializeField] private float flight_time_max;
     [SerializeField] private float flight_time;
-    
+
+    private Vector2 length_to_edge;
+    private Vector2 top_right;
+    private Vector2 bottom_right;
+    private Vector2 top_left;
+    private Vector2 bottom_left;
+
+
 
 
     void Start()
@@ -31,7 +43,16 @@ public class bullet_script : MonoBehaviour
         angle = convert_to_readable_angle(transform.eulerAngles.z);
 
         direction_vector = new Vector2(Mathf.Cos(angle*Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
-        
+
+        //sprite_renderer size * localsize = size of the spritebox in editor
+        length_to_edge = (sprite_renderer.size * transform.localScale) / 2;
+
+        //set coords of hitbox
+        top_right = rotate_point(new Vector2(length_to_edge.x, length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
+        bottom_right = rotate_point(new Vector2(length_to_edge.x, -length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
+        top_left = rotate_point(new Vector2(-length_to_edge.x, length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
+        bottom_left = rotate_point(new Vector2(-length_to_edge.x, -length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
+
     }
 
     void Update()   //add collision 
@@ -42,7 +63,58 @@ public class bullet_script : MonoBehaviour
 
         //create own rotated boxcast that is composed of 4 raycasts that returns true if it hits something.
         //use "boxcast" to detect bullet collision
-        //https://answers.unity.com/questions/148877/how-to-destroy-a-gameobject-when-hit-by-raycast.html 
+
+
+        //update front of bullet collision 
+        top_right = rotate_point(new Vector2(length_to_edge.x, length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
+        bottom_right = rotate_point(new Vector2(length_to_edge.x, -length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
+
+        if (draw_hitbox)
+        {
+            Debug.DrawLine(top_left, bottom_left);
+            Debug.DrawLine(bottom_left, bottom_right);
+            Debug.DrawLine(bottom_right, top_right);
+            Debug.DrawLine(top_right, top_left);
+        }
+
+        //check every edge
+        RaycastHit2D hit = Physics2D.Linecast(top_left, top_right, ~bullet_layer);
+        if (hit.collider == null)
+        {
+            hit = Physics2D.Linecast(top_left, bottom_left, ~bullet_layer);
+        }
+        else if (hit.collider == null)
+        {
+            hit = Physics2D.Linecast(top_right, bottom_right, ~bullet_layer);
+        }
+        else if (hit.collider != null)
+        {
+            hit = Physics2D.Linecast(bottom_right, bottom_left, ~bullet_layer);
+        }
+
+        //see if there is a hit
+        if (hit.collider != null)
+        {
+
+            if (hit.collider.gameObject.layer == enemy_layer)
+            {
+                Destroy(hit.collider.gameObject);
+                Destroy(this.gameObject);
+            }
+
+            if (hit.collider.gameObject.layer != enemy_layer)
+            {
+                Destroy(this.gameObject);
+            }
+
+        }
+
+        //used to store back of bullet coords 1 frame behind
+        top_left = rotate_point(new Vector2(-length_to_edge.x, length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
+        bottom_left = rotate_point(new Vector2(-length_to_edge.x, -length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
+
+
+
 
 
         if (flight_time >= flight_time_max && destroy)
@@ -50,7 +122,6 @@ public class bullet_script : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 
 
 
@@ -69,5 +140,17 @@ public class bullet_script : MonoBehaviour
         }
 
 
+    }
+
+    public Vector2 rotate_point(Vector2 point, float angle_rad)
+    {
+        //simple rotation matrix
+
+        Vector2 new_point = new Vector2(0, 0);
+
+        new_point.x = point.x * Mathf.Cos(angle_rad) - point.y * Mathf.Sin(angle_rad);
+        new_point.y = point.x * Mathf.Sin(angle_rad) + point.y * Mathf.Cos(angle_rad);
+
+        return new_point;
     }
 }
