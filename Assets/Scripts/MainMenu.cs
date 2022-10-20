@@ -16,13 +16,13 @@ public class MainMenu : MonoBehaviour
     {
         
     }
-
+    //goes to game
     public void goToGame()
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
-
+    //closes game
     public void quitGame()
     {
         Application.Quit();

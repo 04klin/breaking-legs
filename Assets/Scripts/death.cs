@@ -31,7 +31,6 @@ public class death : MonoBehaviour
         //change to death within the if statement
         if(collision.gameObject.tag == "Enemy")
         {
-            
            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             counting.run();
 

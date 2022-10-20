@@ -8896,8 +8896,8 @@ MonoBehaviour:
   enemy: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
   floor_collider: {fileID: 1965515507}
   camera: {fileID: 519420031}
-  spawnEnemy: 0
-  spawnSpeed: 0
+  spawnEnemy: 1
+  spawnSpeed: 1
 --- !u!4 &1477191868
 Transform:
   m_ObjectHideFlags: 0
