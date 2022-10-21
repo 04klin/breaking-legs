@@ -41,12 +41,11 @@ public class timer_bar_control : MonoBehaviour //kevin side takes this
 
     void Update()
     {
-        if(Time.timeScale == 1)
-        {
-            slider.value -= speed;
-        }
-        
-       
+        if (pause_menu.paused)
+            return;
+
+        slider.value -= speed;
+
     }
 
 }

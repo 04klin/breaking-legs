@@ -34,8 +34,11 @@ public class enemy_movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        if (pause_menu.paused)
+            return;
+
         velocity = new Vector2(0, rb.velocity.y);
         //won't move until it is grounded
         if (is_grounded())

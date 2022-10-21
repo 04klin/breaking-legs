@@ -19,14 +19,14 @@ public class pause_menu : MonoBehaviour
 
         pause_menu_obj.SetActive(true);
         Time.timeScale = 0;
-        paused = !paused;
+        paused = true;
     }
     //resumes game
     public void resume_game()
     {
         pause_menu_obj.SetActive(false);
         Time.timeScale = 1;
-        paused = !paused;
+        paused = false;
     }
     //goes to main menu
     public void main_menu()

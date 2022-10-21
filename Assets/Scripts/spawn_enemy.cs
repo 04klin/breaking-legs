@@ -28,6 +28,9 @@ public class spawn_enemy : MonoBehaviour
 
     private void Update()
     {
+        if (pause_menu.paused)
+            return;
+
         time += Time.deltaTime;
         //creates an enemy
         if (time >spawnSpeed)
