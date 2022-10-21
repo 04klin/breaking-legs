@@ -10,8 +10,7 @@ public class bullet_script : MonoBehaviour
     public float flipper;
     public SpriteRenderer sprite_renderer;
     public LayerMask bullet_layer;
-    public LayerMask ground_layer;
-    public LayerMask enemy_layer;
+    public GameObject blood;
 
     [Header("Bullet Atributes")]
     [SerializeField] private float bullet_speed;
@@ -81,31 +80,28 @@ public class bullet_script : MonoBehaviour
         RaycastHit2D hit = Physics2D.Linecast(top_left, top_right, ~bullet_layer);
         if (hit.collider == null)
         {
-            hit = Physics2D.Linecast(top_left, bottom_left, ~bullet_layer);
-        }
-        else if (hit.collider == null)
-        {
-            hit = Physics2D.Linecast(top_right, bottom_right, ~bullet_layer);
-        }
-        else if (hit.collider != null)
-        {
             hit = Physics2D.Linecast(bottom_right, bottom_left, ~bullet_layer);
         }
 
         //see if there is a hit
         if (hit.collider != null)
         {
+            BoxCollider2D hit_collider = hit.collider.gameObject.GetComponent<BoxCollider2D>();
 
-            if (hit.collider.gameObject.layer == enemy_layer)
+            Debug.Log(hit.collider.gameObject.layer);
+            
+
+            if (hit.collider.gameObject.layer == 6 /* enemy layer */)
             {
+                Instantiate(blood, hit.point, Quaternion.Euler(0, 0, angle - 180 - 90));
+
                 Destroy(hit.collider.gameObject);
-                Destroy(this.gameObject);
+                
             }
 
-            if (hit.collider.gameObject.layer != enemy_layer)
-            {
-                Destroy(this.gameObject);
-            }
+            
+
+            Destroy(this.gameObject);
 
         }
 
