@@ -6,18 +6,13 @@ using UnityEngine.UIElements;
 
 public class follow_player : MonoBehaviour
 {
-    public Transform billy_pos;
+    public Transform player_pos;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.position = new Vector3(billy_pos.position.x, billy_pos.position.y + 2, transform.position.z);
+        transform.position = new Vector3(player_pos.position.x, player_pos.position.y + 2, transform.position.z);
     }
 }

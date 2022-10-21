@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491a4ebe55f4a0c42a059e984c70d4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  billy_pos: {fileID: 404129480}
+  player_pos: {fileID: 404129480}
 --- !u!1 &621915769
 GameObject:
   m_ObjectHideFlags: 0
