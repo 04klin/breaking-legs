@@ -168,9 +168,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  billy_pos: {fileID: 0}
   rb: {fileID: 33711243039343360}
   ground_layer:
     serializedVersion: 2
     m_Bits: 8
   enemy_collider: {fileID: 33711243039343361}
+  questionable_substance: {fileID: 0}
+  enemy: {fileID: 33711243039343389}

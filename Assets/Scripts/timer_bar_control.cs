@@ -41,7 +41,12 @@ public class timer_bar_control : MonoBehaviour //kevin side takes this
 
     void Update()
     {
-        slider.value -= speed;
+        if(Time.timeScale == 1)
+        {
+            slider.value -= speed;
+        }
+        
+       
     }
 
 }
