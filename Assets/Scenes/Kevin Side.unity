@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_collider: {fileID: 404129478}
-  counting: {fileID: 0}
+  counting: {fileID: 1826988307}
 --- !u!95 &404129475
 Animator:
   serializedVersion: 4
@@ -679,8 +679,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2119928907}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: mainMenu
+        m_TargetAssemblyTypeName: pause_menu, Assembly-CSharp
+        m_MethodName: main_menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17306,8 +17306,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2119928907}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: resumeGame
+        m_TargetAssemblyTypeName: pause_menu, Assembly-CSharp
+        m_MethodName: resume_game
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17528,8 +17528,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2119928907}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: quitGame
+        m_TargetAssemblyTypeName: pause_menu, Assembly-CSharp
+        m_MethodName: quit_game
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25497,7 +25497,7 @@ MonoBehaviour:
   floor_collider: {fileID: 1202079501}
   camera: {fileID: 519420031}
   spawnEnemy: 0
-  spawnSpeed: 0.1
+  spawnSpeed: 0.2
 --- !u!4 &1877553172
 Transform:
   m_ObjectHideFlags: 0
@@ -30524,7 +30524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6facfd21c8073488b89e80922fe2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1360155894}
+  pause_menu_obj: {fileID: 1360155894}
 --- !u!114 &2119928908
 MonoBehaviour:
   m_ObjectHideFlags: 0

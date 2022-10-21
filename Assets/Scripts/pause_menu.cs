@@ -3,42 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class pause_menu : MonoBehaviour
 {
 
     private bool paused = false;
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject pause_menu_obj;
     //quits game
-    public void quitGame()
-    { 
+    public void quit_game()
+    {
         Application.Quit();
     }
     //pauses game
-    public void pauseGame()
+    public void pause_game()
     {
-        
-        pauseMenu.SetActive(true);
+
+        pause_menu_obj.SetActive(true);
         Time.timeScale = 0;
         paused = !paused;
     }
     //resumes game
-    public void resumeGame()
+    public void resume_game()
     {
-        pauseMenu.SetActive(false);
+        pause_menu_obj.SetActive(false);
         Time.timeScale = 1;
         paused = !paused;
     }
     //goes to main menu
-    public void mainMenu()
+    public void main_menu()
     {
         SceneManager.LoadScene(0);
     }
-    // Update is called once per frame
+
     void Update()
     {//pauses game if escape is pressed
-        if(Input.GetKeyDown(KeyCode.Escape))
-        { 
-            pauseGame();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause_game();
         }
     }
 }
