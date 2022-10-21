@@ -44,6 +44,9 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pause_menu.paused)
+            return;
+
         velocity = new Vector2(0, rb.velocity.y);
 
         if (Input.GetKey("a"))

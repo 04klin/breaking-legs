@@ -56,6 +56,9 @@ public class bullet_script : MonoBehaviour
 
     void Update()   //add collision 
     {
+        if (pause_menu.paused)
+            return;
+
         rb.velocity = direction_vector * bullet_speed;
 
         flight_time += Time.deltaTime;

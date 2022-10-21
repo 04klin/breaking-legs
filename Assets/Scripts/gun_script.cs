@@ -31,6 +31,9 @@ public class gun_script : MonoBehaviour
 
     void Update()
     {
+        if (pause_menu.paused)
+            return;
+
         Vector3 player_position = player.transform.position;
 
         transform.position = new Vector3(player_position.x, player_position.y, transform.position.z);

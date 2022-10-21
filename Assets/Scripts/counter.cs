@@ -10,11 +10,7 @@ public class counter : MonoBehaviour
 
     private static int count = 0;
     public TMP_Text x;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
