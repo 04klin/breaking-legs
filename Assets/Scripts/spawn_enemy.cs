@@ -14,7 +14,7 @@ public class spawn_enemy : MonoBehaviour
     public CompositeCollider2D floor_collider;
     public Camera camera;
     [SerializeField] private bool spawnEnemy;
-    [SerializeField] private int spawnSpeed;
+    [SerializeField] private float spawnSpeed;
     
 
     

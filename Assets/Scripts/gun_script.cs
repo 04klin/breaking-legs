@@ -84,7 +84,7 @@ public class gun_script : MonoBehaviour
 
         //start of bullet and recoil
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             GameObject new_bullet = Instantiate(bullet, tip_point, transform.rotation);
             new_bullet.GetComponent<bullet_script>().flipper = flipper;

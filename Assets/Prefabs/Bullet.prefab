@@ -112,7 +112,7 @@ MonoBehaviour:
   angle: 0
   destroy: 1
   draw_hitbox: 1
-  flight_time_max: 0.3
+  flight_time_max: 2
   flight_time: 0
 --- !u!50 &4105360783286440748
 Rigidbody2D:
