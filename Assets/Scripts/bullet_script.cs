@@ -93,13 +93,12 @@ public class bullet_script : MonoBehaviour
 
             Debug.Log(hit.collider.gameObject.layer);
             
-
+            //makes blood and meth and destroys enemy
             if (hit.collider.gameObject.layer == 6 /* enemy layer */)
             {
                 Instantiate(blood, hit.point, Quaternion.Euler(0, 0, angle - 180 - 90));
-
-                Destroy(hit.collider.gameObject);
-                
+                enemy_movement x = hit.collider.gameObject.GetComponent<enemy_movement>();
+                x.make_meth();
             }
 
             

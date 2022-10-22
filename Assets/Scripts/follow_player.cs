@@ -13,6 +13,6 @@ public class follow_player : MonoBehaviour
     void Update()
     {
 
-        transform.position = new Vector3(player_pos.position.x, player_pos.position.y + 2, transform.position.z);
+        transform.position = new Vector3(player_pos.position.x, player_pos.position.y + 3, transform.position.z);
     }
 }

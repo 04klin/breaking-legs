@@ -14,19 +14,13 @@ public class enemy_movement : MonoBehaviour
     public GameObject questionable_substance;
     public GameObject enemy;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        if (collision.gameObject.tag == "Bullet")
-        { 
-        Instantiate(questionable_substance, new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.y), transform.rotation);
-        Destroy(enemy);
-        }
+  
+    public void make_meth()
+    {        
+            Instantiate(questionable_substance, new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.y), enemy.transform.rotation);
+            Destroy(enemy);
         
-
-
     }
-
     // Start is called before the first frame update
     void Start()
     {

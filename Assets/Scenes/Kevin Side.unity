@@ -474,7 +474,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491a4ebe55f4a0c42a059e984c70d4b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  billy_pos: {fileID: 404129480}
+  player_pos: {fileID: 404129480}
 --- !u!1 &621915769
 GameObject:
   m_ObjectHideFlags: 0
@@ -25496,7 +25496,7 @@ MonoBehaviour:
   enemy: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
   floor_collider: {fileID: 1202079501}
   camera: {fileID: 519420031}
-  spawnEnemy: 0
+  spawnEnemy: 1
   spawnSpeed: 0.2
 --- !u!4 &1877553172
 Transform:
