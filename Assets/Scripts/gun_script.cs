@@ -1,7 +1,9 @@
 using JetBrains.Annotations;
+using Newtonsoft.Json.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
+using TreeEditor;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
@@ -10,21 +12,31 @@ public class gun_script : MonoBehaviour
     [Header("Components needed")]
     public GameObject player;
     public GameObject bullet;
+    public LayerMask ground_layer;
     
 
 
 
-    [Header("Position Gun Tip point")] // tip_offset is how far the tip is from the center of rotation
+    [Header("Position Gun Tip point")] // tip_offset should be the height of the tip and the x should be where you want the bullet to spawn
     [SerializeField] private bool active;
     [SerializeField] private Vector2 tip_offset;
     private Vector2 rotated_tip_offset = new Vector2(0,0);
-    public float angle;
-    public float angle_deg;
+
+    private float angle = 0;
+    private float angle_deg = 0;
     private Vector2 tip_point;
 
-    [SerializeField] private float recoil_amplitude;
+    [Header("Recoil and Inaccuracy Controls")]
+    [SerializeField] private int recoil_amplitude;
+    [SerializeField] private float recoil_return_speed;
     private float recoil_angle = 0;
-    [SerializeField] private float shoot_speed;
+    [SerializeField] private int max_inaccuracy;
+    private float current_inaccuracy;
+    [SerializeField] private float stability;
+    [SerializeField] private float reset_frames;
+    [SerializeField] private float fire_rate;
+
+    private float time;
 
 
 
@@ -33,6 +45,8 @@ public class gun_script : MonoBehaviour
     {
         if (pause_menu.paused)
             return;
+
+        
 
         Vector3 player_position = player.transform.position;
 
@@ -74,9 +88,13 @@ public class gun_script : MonoBehaviour
         Vector2 point1 = gun_location;
         Vector2 point2 = new Vector2(gun_location.x, gun_location.y + height_gun);
         Vector2 point3 = new Vector2(gun_location.x + length_handle_mouse, gun_location.y);
-
         float counter_angle = 90 - Vector2.Angle(point1 - point2, point3 - point2); //angle between 3 points
 
+
+        //adjust for recoil before rotating tip point
+        recoil_angle = Mathf.Max(0, recoil_angle - recoil_return_speed);
+        angle += recoil_angle * Mathf.Deg2Rad * flipper;
+        angle_deg = angle * Mathf.Rad2Deg;
 
         //convert tip_offset to a worldspace point
         rotated_tip_offset = rotate_point(true_tip_offset, ( angle_deg - (counter_angle * flipper)) * Mathf.Deg2Rad);
@@ -86,19 +104,40 @@ public class gun_script : MonoBehaviour
         //end of mouse alignment section
 
         //start of bullet and recoil
+        time += Time.deltaTime;
+        bool inside_something = Physics2D.Linecast(tip_point, tip_point,ground_layer);
 
-        if (Input.GetMouseButton(0))
+        
+
+        if (!inside_something && Input.GetMouseButton(0))
         {
-            GameObject new_bullet = Instantiate(bullet, tip_point, transform.rotation);
-            new_bullet.GetComponent<bullet_script>().flipper = flipper;
-            
+            if (time >= fire_rate)
+            {
+                float shot_inaccuracy = Random.Range(-current_inaccuracy, current_inaccuracy);
+
+
+                GameObject new_bullet = Instantiate(bullet, tip_point, transform.rotation * Quaternion.Euler(0, 0, shot_inaccuracy));
+                new_bullet.GetComponent<bullet_script>().flipper = flipper;
+
+
+                recoil_angle = recoil_amplitude;
+                current_inaccuracy = Mathf.Min(max_inaccuracy, current_inaccuracy + stability);
+
+                time = 0;
+            }
+        }
+        else
+        {
+            current_inaccuracy = Mathf.Max(0, current_inaccuracy - stability / reset_frames);
+
+            time = fire_rate;
         }
 
-
+        //end of bullet and recoil
 
 
         //apply proper rotation on the sprite
-        transform.rotation = Quaternion.Euler(0, 0, angle_deg - (counter_angle * flipper));
+        transform.rotation = Quaternion.Euler(0, 0, angle_deg - ((counter_angle) * flipper));
 
 
 
