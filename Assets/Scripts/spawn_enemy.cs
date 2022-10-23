@@ -12,7 +12,7 @@ public class spawn_enemy : MonoBehaviour
     public GameObject enemy;
     private float time = 0;
     public CompositeCollider2D floor_collider;
-    public Camera camera;
+    public Camera main_camera;
     [SerializeField] private bool spawnEnemy;
     [SerializeField] private float spawnSpeed;
     
@@ -39,10 +39,10 @@ public class spawn_enemy : MonoBehaviour
             float left_side_max = floor_collider.bounds.center.x - floor_collider.bounds.size.x/2;
             float right_side_max = floor_collider.bounds.center.x + floor_collider.bounds.size.x / 2;
             //finds the pos of camera and its size
-            float height = 2f * camera.orthographicSize;
-            float width = height * camera.aspect;
-            float left_side = camera.transform.position.x - width/2;
-            float right_side = camera.transform.position.x + width/2 ;
+            float height = 2f * main_camera.orthographicSize;
+            float width = height * main_camera.aspect;
+            float left_side = main_camera.transform.position.x - width/2;
+            float right_side = main_camera.transform.position.x + width/2 ;
           //replaces min and max with the border if it surpasses it.
             if(left_side < left_side_max)
             {

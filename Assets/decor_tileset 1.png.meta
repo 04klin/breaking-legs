@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7bd69859af67894faa1e52dc06533c5
+guid: 5540fc8837ec33c409da6d20c5c9b051
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: decor_tileset_0
+      name: decor_tileset 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 403bf2e15ca292542adeede1d84466cd
-      internalID: -1144636002
+      spriteID: 759cbfdc0860d93469e8f0bb13b97918
+      internalID: 1737502868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_tileset_1
+      name: decor_tileset 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3b3a40e780a28e48a8221c396e42b33
-      internalID: 704849141
+      spriteID: 4892a9f326c41b74fb8c0d06b40970f5
+      internalID: -526626266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_tileset_2
+      name: decor_tileset 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a93d63a8963d72d4db40381a2cc1bf08
-      internalID: 956553624
+      spriteID: 68c7b2d35379292488b6f4b8c8a4ddfe
+      internalID: -1362880697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_tileset_3
+      name: decor_tileset 1_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,35 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee6f05dac2d11824486d17cc1ba8d272
-      internalID: 480816463
+      spriteID: 4f4e4d12a01052c47bf80c44d031efed
+      internalID: 1521172000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_tileset_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc8024cde45ce3a4bb605275fb6bfe2e
-      internalID: -90116735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: decor_tileset_5
+      name: decor_tileset 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -224,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5d12ebafa4ebf4a91042134f94623b
-      internalID: -597870803
+      spriteID: 3f43e986b67ca084b8faf21798e18283
+      internalID: -965866158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_tileset_6
+      name: decor_tileset 1_5
       rect:
         serializedVersion: 2
         x: 32
@@ -245,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd5c30e38531763469ad6b0d4c1482e8
-      internalID: 1375855853
+      spriteID: 02424e492ea881b4e88b5531ccc1e541
+      internalID: 263403784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_tileset_7
+      name: decor_tileset 1_6
       rect:
         serializedVersion: 2
         x: 64
@@ -266,14 +245,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f811cd14a9d2614bb3499dda083d483
-      internalID: 1643588200
+      spriteID: db5705c69666edb43806e8b26dc508b0
+      internalID: -664849215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_tileset_8
+      name: decor_tileset 1_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d50ce9e254e1f48a71bb49659544b8
+      internalID: 948810829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_tileset 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -287,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66ff1be313efc8242ac8ba7d7d04eeda
-      internalID: 941761962
+      spriteID: 325ea22c1d2bd5f4d8d96eeeca8fdbfa
+      internalID: -638952997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: decor_tileset_9
+      name: decor_tileset 1_9
       rect:
         serializedVersion: 2
         x: 32
@@ -308,8 +308,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de57f0af44e347b4aad6247f3ee10834
-      internalID: 842097412
+      spriteID: 44b4a2553b16a5b4bababd3fb8d4ea5b
+      internalID: -2118878725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_tileset 1_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961c1c036e90a064381636c4daa63640
+      internalID: 1681439529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: decor_tileset 1_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ee136211d11e14ab360810e9c29177
+      internalID: -1814742966
       vertices: []
       indices: 
       edges: []
@@ -325,16 +367,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      decor_tileset_0: -1144636002
-      decor_tileset_6: 1375855853
-      decor_tileset_7: 1643588200
-      decor_tileset_1: 704849141
-      decor_tileset_8: 941761962
-      decor_tileset_9: 842097412
-      decor_tileset_4: -90116735
-      decor_tileset_2: 956553624
-      decor_tileset_3: 480816463
-      decor_tileset_5: -597870803
+      decor_tileset 1_2: -1362880697
+      decor_tileset 1_3: 1521172000
+      decor_tileset 1_6: -664849215
+      decor_tileset 1_7: 948810829
+      decor_tileset 1_9: -2118878725
+      decor_tileset 1_1: -526626266
+      decor_tileset 1_0: 1737502868
+      decor_tileset 1_5: 263403784
+      decor_tileset 1_11: -1814742966
+      decor_tileset 1_10: 1681439529
+      decor_tileset 1_4: -965866158
+      decor_tileset 1_8: -638952997
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

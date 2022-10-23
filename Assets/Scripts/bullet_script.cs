@@ -91,7 +91,6 @@ public class bullet_script : MonoBehaviour
         {
             BoxCollider2D hit_collider = hit.collider.gameObject.GetComponent<BoxCollider2D>();
 
-            Debug.Log(hit.collider.gameObject.layer);
             
 
             if (hit.collider.gameObject.layer == 6 /* enemy layer */)
