@@ -9,7 +9,7 @@ public class bullet_script : MonoBehaviour
     public Rigidbody2D rb;
     public float flipper;
     public SpriteRenderer sprite_renderer;
-    public LayerMask bullet_layer;
+    public LayerMask excluded_layers;
     public GameObject blood;
 
     [Header("Bullet Atributes")]
@@ -80,10 +80,10 @@ public class bullet_script : MonoBehaviour
         }
 
         //check every edge
-        RaycastHit2D hit = Physics2D.Linecast(top_left, top_right, ~bullet_layer);
+        RaycastHit2D hit = Physics2D.Linecast(top_left, top_right, ~excluded_layers);
         if (hit.collider == null)
         {
-            hit = Physics2D.Linecast(bottom_right, bottom_left, ~bullet_layer);
+            hit = Physics2D.Linecast(bottom_right, bottom_left, ~excluded_layers);
         }
 
         //see if there is a hit

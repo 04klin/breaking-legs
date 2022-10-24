@@ -19,6 +19,7 @@ public class gun_script : MonoBehaviour
 
     [Header("Position Gun Tip point")] // tip_offset should be the height of the tip and the x should be where you want the bullet to spawn
     [SerializeField] private bool active;
+    [SerializeField] private Vector2 arm_offset;
     [SerializeField] private Vector2 tip_offset;
     private Vector2 rotated_tip_offset = new Vector2(0,0);
 
@@ -37,6 +38,7 @@ public class gun_script : MonoBehaviour
     [SerializeField] private float fire_rate;
 
     private float time;
+    private int flipper = 1;
 
 
 
@@ -46,9 +48,9 @@ public class gun_script : MonoBehaviour
         if (pause_menu.paused)
             return;
 
-        
+        player.transform.localScale = new Vector3(Mathf.Abs(player.transform.localScale.x) * flipper, player.transform.localScale.y, player.transform.localScale.z);
 
-        Vector3 player_position = player.transform.position;
+        Vector3 player_position = player.transform.position + new Vector3(arm_offset.x * Mathf.Sign(player.transform.localScale.x), arm_offset.y, 0);
 
         transform.position = new Vector3(player_position.x, player_position.y, transform.position.z);
 
@@ -63,7 +65,7 @@ public class gun_script : MonoBehaviour
         angle_deg = angle * Mathf.Rad2Deg;
 
         //setting up so the gun flips so it never goes upside down
-        float flipper = 1;
+        
         Vector2 true_tip_offset;
 
         if (angle_deg >= -90 && angle_deg <= 90)

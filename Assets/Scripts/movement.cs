@@ -29,9 +29,10 @@ public class movement : MonoBehaviour
         idle,
         walking,
         falling,
-        raising
+        raising,
+        backward_walking
     }
-    private animate_states current_state = animate_states.idle;
+    private int current_state = (int) animate_states.idle;
 
    
 
@@ -58,9 +59,8 @@ public class movement : MonoBehaviour
             velocity += Vector2.right;
         }
 
-        //flip sprite based on what direction player is going
-        if (velocity.x != 0 && transform.localScale.x != velocity.x * Math.Abs(transform.localScale.x))
-            transform.localScale = new Vector3(velocity.x * Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        //flipping sprite is based on gun 
+        
 
         velocity.x *= speed;
 
@@ -81,24 +81,28 @@ public class movement : MonoBehaviour
             jumping = true;
             timer_bar.subtract_percent(percent_jump_subtract);
         }
-        
+
 
         //set the state for the animation player
-        if (grounded && velocity.x != 0)
+        if (grounded && velocity.x != 0 && MathF.Sign(velocity.x) == MathF.Sign(transform.localScale.x))
         {
-            current_state = animate_states.walking;
-        } 
+            current_state = (int) animate_states.walking;
+        }
+        else if (grounded && velocity.x != 0 && MathF.Sign(velocity.x) == -MathF.Sign(transform.localScale.x))
+        {
+            current_state = (int) animate_states.backward_walking;
+        }
         else if (grounded && velocity.x == 0)
         {
-            current_state = animate_states.idle;
+            current_state = (int) animate_states.idle;
         }
         if (jumping && rb.velocity.y > 0)
         {
-            current_state = animate_states.raising;
+            current_state = (int) animate_states.raising;
         }
         else if (jumping && rb.velocity.y < 0)
         {
-            current_state = animate_states.falling;
+            current_state = (int) animate_states.falling;
         }
 
         

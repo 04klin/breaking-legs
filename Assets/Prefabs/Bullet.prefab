@@ -101,9 +101,9 @@ MonoBehaviour:
   rb: {fileID: 4105360783286440748}
   flipper: 0
   sprite_renderer: {fileID: 4105360783286440751}
-  bullet_layer:
+  excluded_layers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   blood: {fileID: 8528734385210350470, guid: 6d9ba081544649649a2ea2525ab15610, type: 3}
   bullet_speed: 20
   mouse_location: {x: 0, y: 0}
