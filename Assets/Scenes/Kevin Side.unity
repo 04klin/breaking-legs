@@ -24740,7 +24740,7 @@ MonoBehaviour:
   enemy: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
   floor_collider: {fileID: 560082320}
   main_camera: {fileID: 519420031}
-  spawnEnemy: 0
+  spawnEnemy: 1
   spawnSpeed: 0.5
 --- !u!4 &1789287405
 Transform:

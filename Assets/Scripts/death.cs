@@ -34,8 +34,12 @@ public class death : MonoBehaviour
         {
            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             counting.run();
-
+            
         }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Meth")
         {
             Destroy(collision.gameObject);
@@ -43,6 +47,6 @@ public class death : MonoBehaviour
         }
     }
 
-    
+
 
 }
