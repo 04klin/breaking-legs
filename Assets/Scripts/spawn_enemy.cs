@@ -55,7 +55,7 @@ public class spawn_enemy : MonoBehaviour
             
             if(spawnEnemy == true)
             {
-                Instantiate(enemy, new Vector3(Random.Range(left_side, right_side), 10, 0), transform.rotation);
+                Instantiate(enemy, new Vector3(Random.Range(left_side, right_side), 13, 0), transform.rotation);
                 
             }
             time = 0;
