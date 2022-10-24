@@ -11,6 +11,7 @@ public class death : MonoBehaviour
 
     public BoxCollider2D player_collider;
     public counter counting;
+    public timer_bar_control time_bar;
     
     
 
@@ -35,7 +36,13 @@ public class death : MonoBehaviour
             counting.run();
 
         }
+        if (collision.gameObject.tag == "Meth")
+        {
+            Destroy(collision.gameObject);
+            time_bar.set_slider_value(time_bar.get_value() + 5000);
+        }
     }
+
     
 
 }
