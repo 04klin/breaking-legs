@@ -26,6 +26,11 @@ public class spawn_enemy : MonoBehaviour
         
     }
 
+    public void changeSpawnSpeed(float x)
+    {
+        spawnSpeed = x;
+    }    
+
     private void Update()
     {
         if (pause_menu.paused)

@@ -12,8 +12,10 @@ public class death : MonoBehaviour
     public BoxCollider2D player_collider;
     public counter counting;
     public timer_bar_control time_bar;
-    
-    
+    public spawn_enemy spawner;
+
+
+
 
     void Start()
     {
@@ -44,6 +46,12 @@ public class death : MonoBehaviour
         {
             Destroy(collision.gameObject);
             time_bar.set_slider_value(time_bar.get_value() + 5000);
+        }
+        if (collision.gameObject.tag == "Free Soda")
+        {
+            Destroy(collision.gameObject);
+
+            spawner.changeSpawnSpeed(1f);
         }
     }
 
