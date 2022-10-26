@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using Newtonsoft.Json.Serialization;
+using Packages.Rider.Editor.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
@@ -13,7 +14,8 @@ public class gun_script : MonoBehaviour
     public GameObject player;
     public GameObject bullet;
     public LayerMask ground_layer;
-    
+    public timer_bar_control timer;
+
 
 
 
@@ -33,7 +35,7 @@ public class gun_script : MonoBehaviour
     private float recoil_angle = 0;
     [SerializeField] private int max_inaccuracy;
     private float current_inaccuracy;
-    [SerializeField] private float stability;
+    [SerializeField] private float stability_percent;
     [SerializeField] private float reset_frames;
     [SerializeField] private float fire_rate;
 
@@ -108,8 +110,9 @@ public class gun_script : MonoBehaviour
         //start of bullet and recoil
         time += Time.deltaTime;
         bool inside_something = Physics2D.Linecast(tip_point, tip_point,ground_layer);
-
         
+        current_inaccuracy = timer.get_percent_full(stability_percent) * max_inaccuracy;
+
 
         if (!inside_something && Input.GetMouseButton(0))
         {
@@ -123,15 +126,12 @@ public class gun_script : MonoBehaviour
 
 
                 recoil_angle = recoil_amplitude;
-                current_inaccuracy = Mathf.Min(max_inaccuracy, current_inaccuracy + stability);
 
                 time = 0;
             }
         }
         else
         {
-            current_inaccuracy = Mathf.Max(0, current_inaccuracy - stability / reset_frames);
-
             time = fire_rate;
         }
 

@@ -79,7 +79,7 @@ public class movement : MonoBehaviour
         {
             velocity = Vector2.up * jump_height;
             jumping = true;
-            timer_bar.subtract_percent(percent_jump_subtract);
+            timer_bar.add_percent(-percent_jump_subtract);
         }
 
 
