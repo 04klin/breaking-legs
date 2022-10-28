@@ -14,6 +14,7 @@ public class collisions : MonoBehaviour
     public spawn_enemy spawner;
     public death death;
     
+    
 
 
 
@@ -35,6 +36,7 @@ public class collisions : MonoBehaviour
         //change to death within the if statement
         if (collision.gameObject.tag == "Enemy")
         {
+            
             death.run();
 
         }

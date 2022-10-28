@@ -12,14 +12,14 @@ public class death : MonoBehaviour
 
     public GameObject death_controller;
     public GameObject main_character;
+    public TMP_Text score;
+    public TMP_Text high_score;
+    public highscore get_high_score;
 
 
 
-    void Start()
-    {
-        
-    }
-
+ 
+    
     // Update is called once per frame
     void Update()
     {
@@ -29,8 +29,10 @@ public class death : MonoBehaviour
     //trigger from collision.
    public void run()
     {
-   
         death_controller.SetActive(true);
+        score.text = "" + Math.Round(get_high_score.get_score(),1);
+        high_score.text = "" + Math.Round(get_high_score.get_high_score(),1);
+        Debug.Log("dddd");
         pause_menu.pause_test();
      
     
