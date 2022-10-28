@@ -674,15 +674,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 916999432}
+  m_Children: []
   m_Father: {fileID: 1467258549}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 712.59204, y: -150.58276}
-  m_SizeDelta: {x: 48.3549, y: 459.0688}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -32.45459, y: 65.94476}
+  m_SizeDelta: {x: 51.100708, y: 22.945984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &380592275
 MonoBehaviour:
@@ -15660,12 +15659,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1467258549}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 604.9, y: -396.89}
-  m_SizeDelta: {x: 263.73, y: 45.207}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -141.09998, y: 22.609985}
+  m_SizeDelta: {x: 263.72998, y: 44.20703}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &729649751
 MonoBehaviour:
@@ -15794,13 +15793,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 380592274}
-  m_RootOrder: 0
+  m_Father: {fileID: 1467258549}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -126.91293}
-  m_SizeDelta: {x: 0, y: -253.8267}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -33.40796, y: 65.44}
+  m_SizeDelta: {x: 48.354492, y: 22.940002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916999433
 MonoBehaviour:
@@ -19279,6 +19278,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1467258549}
+  - component: {fileID: 1467258550}
   m_Layer: 5
   m_Name: Bullet display
   m_TagString: Untagged
@@ -19299,6 +19299,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 380592274}
+  - {fileID: 916999432}
   - {fileID: 729649750}
   m_Father: {fileID: 1723689358}
   m_RootOrder: 0
@@ -19306,8 +19307,28 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.00036621, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1467258550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467258548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754a5eadfdc26bb4eb68081b1a79590c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite_height: 11
+  unit_height: 34.419
+  max_ammo: 20
+  current_ammo: 0
+  background_transform: {fileID: 380592274}
+  foreground_transform: {fileID: 916999432}
+  bullet_sprite: {fileID: 380592275}
+  bottom: 41
 --- !u!213 &1487440379
 Sprite:
   m_ObjectHideFlags: 0
