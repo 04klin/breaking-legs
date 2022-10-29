@@ -13,8 +13,13 @@ public class gun_script : MonoBehaviour
     [Header("Components needed")]
     public GameObject player;
     public GameObject bullet;
+    public SpriteRenderer gun_renderer;
     public LayerMask ground_layer;
     public timer_bar_control timer;
+    public GameObject falling_gun;
+    public Sprite hand;
+    public Sprite gun_hand;
+    public Sprite empty_gun;
 
 
 
@@ -26,6 +31,7 @@ public class gun_script : MonoBehaviour
     private Vector2 rotated_tip_offset = new Vector2(0,0);
 
     private float angle = 0;
+    private float counter_angle;
     private float angle_deg = 0;
     private Vector2 tip_point;
 
@@ -39,9 +45,24 @@ public class gun_script : MonoBehaviour
     [SerializeField] private float reset_frames;
     [SerializeField] private float fire_rate;
 
+    [Header("Reload and ammo")]
+    public int current_ammo;
+    public int max_ammo;
+    public bool reloading;
+    public float reload_time;
+    public float max_reload_time;
+    
+    
+
+
     private float time;
     private int flipper = 1;
 
+
+    private void Start()
+    {
+        current_ammo = max_ammo;
+    }
 
 
 
@@ -55,6 +76,23 @@ public class gun_script : MonoBehaviour
         Vector3 player_position = player.transform.position + new Vector3(arm_offset.x * Mathf.Sign(player.transform.localScale.x), arm_offset.y, 0);
 
         transform.position = new Vector3(player_position.x, player_position.y, transform.position.z);
+
+        if (reloading)
+        {
+            reload_time += Time.deltaTime;
+            if (reload_time > max_reload_time)
+            {
+                reload_time = 0;
+                current_ammo = max_ammo;
+                reloading = false;
+                gun_renderer.sprite = gun_hand;
+            }
+        }
+        else if (current_ammo == 0)
+        {
+            gun_renderer.sprite = empty_gun;
+        }
+
 
 
         //start of mouse alignment section
@@ -92,7 +130,7 @@ public class gun_script : MonoBehaviour
         Vector2 point1 = gun_location;
         Vector2 point2 = new Vector2(gun_location.x, gun_location.y + height_gun);
         Vector2 point3 = new Vector2(gun_location.x + length_handle_mouse, gun_location.y);
-        float counter_angle = 90 - Vector2.Angle(point1 - point2, point3 - point2); //angle between 3 points
+        counter_angle = 90 - Vector2.Angle(point1 - point2, point3 - point2); //angle between 3 points
 
 
         //adjust for recoil before rotating tip point
@@ -114,9 +152,9 @@ public class gun_script : MonoBehaviour
         current_inaccuracy = timer.get_percent_full(stability_percent) * max_inaccuracy;
 
 
-        if (!inside_something && Input.GetMouseButton(0))
+        if (!inside_something && Input.GetMouseButton(0)  && !reloading)
         {
-            if (time >= fire_rate)
+            if (time >= fire_rate && current_ammo > 0)
             {
                 float shot_inaccuracy = Random.Range(-current_inaccuracy, current_inaccuracy);
 
@@ -127,7 +165,14 @@ public class gun_script : MonoBehaviour
 
                 recoil_angle = recoil_amplitude;
 
+                current_ammo--;
+
                 time = 0;
+            }
+
+            if (time >= fire_rate && current_ammo == 0)
+            {
+                reload();
             }
         }
         else
@@ -137,6 +182,17 @@ public class gun_script : MonoBehaviour
 
         //end of bullet and recoil
 
+
+        //start of reloading
+
+
+        if (current_ammo < max_ammo && !reloading && Input.GetKeyDown("r"))
+        {
+            reload();
+        }
+
+
+        //end of reloading
 
         //apply proper rotation on the sprite
         transform.rotation = Quaternion.Euler(0, 0, angle_deg - ((counter_angle) * flipper));
@@ -156,6 +212,25 @@ public class gun_script : MonoBehaviour
         new_point.y = point.x * Mathf.Sin(angle_rad) + point.y * Mathf.Cos(angle_rad);
 
         return new_point;
+    }
+
+    public void reload()
+    {
+        GameObject gun = Instantiate(falling_gun, transform.position, Quaternion.Euler(0, 0, angle_deg - ((counter_angle) * flipper)));
+        gun.transform.localScale = new Vector3(gun.transform.localScale.x * flipper, gun.transform.localScale.y, gun.transform.localScale.z);
+
+        reloading = true;
+
+        gun_renderer.sprite = hand;
+    }
+
+    public int get_max_ammo()
+    {
+        return max_ammo;
+    }
+    public int get_current_ammo()
+    {
+        return current_ammo;
     }
 
 

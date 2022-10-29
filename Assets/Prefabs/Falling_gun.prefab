@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4105360783286440736
+--- !u!1 &4082271148810376761
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4105360783286440750}
-  - component: {fileID: 4105360783286440751}
-  - component: {fileID: 4105360783286440749}
-  - component: {fileID: 4105360783286440748}
-  - component: {fileID: 3316919763808983341}
-  m_Layer: 8
-  m_Name: Bullet
+  - component: {fileID: 4082271148810376740}
+  - component: {fileID: 4082271148810376763}
+  - component: {fileID: 1825204174519231012}
+  - component: {fileID: 4723242526458736775}
+  m_Layer: 0
+  m_Name: Falling_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4105360783286440750
+--- !u!4 &4082271148810376740
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4105360783286440736}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.311, y: 0.637, z: 0}
-  m_LocalScale: {x: 2.5, y: 0.40000004, z: 1}
+  m_GameObject: {fileID: 4082271148810376761}
+  m_LocalRotation: {x: 0, y: 0, z: 0.17364816, w: 0.9848078}
+  m_LocalPosition: {x: -17.71, y: 0.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4105360783286440751
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
+--- !u!212 &4082271148810376763
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4105360783286440736}
+  m_GameObject: {fileID: 4082271148810376761}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,70 +75,45 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: abf7887f9fb28cd46b12c76e3951928c, type: 3}
-  m_Color: {r: 1, g: 0.9137255, b: 0.16862746, a: 1}
+  m_Sprite: {fileID: 318077625, guid: 598d2190f36058d43aa33b7d4d4dfbc8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
-  m_Size: {x: 0.06374281, y: 0.15387909}
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 0.40625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4105360783286440749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4105360783286440736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3814cf6ec312ca48be91f75411e4726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4105360783286440748}
-  flipper: 0
-  sprite_renderer: {fileID: 4105360783286440751}
-  excluded_layers:
-    serializedVersion: 2
-    m_Bits: 384
-  blood: {fileID: 8528734385210350470, guid: 6d9ba081544649649a2ea2525ab15610, type: 3}
-  bullet_speed: 20
-  mouse_location: {x: 0, y: 0}
-  spawn_location: {x: 0, y: 0}
-  direction_vector: {x: 0, y: 0}
-  angle: 0
-  draw_hitbox: 1
---- !u!50 &4105360783286440748
+--- !u!50 &1825204174519231012
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4105360783286440736}
+  m_GameObject: {fileID: 4082271148810376761}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &3316919763808983341
+  m_Constraints: 0
+--- !u!114 &4723242526458736775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4105360783286440736}
+  m_GameObject: {fileID: 4082271148810376761}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff040d547a9b2df43b7ce7205dbb9b42, type: 3}

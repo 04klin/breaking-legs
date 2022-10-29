@@ -375,19 +375,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 653722766}
   bullet: {fileID: 4105360783286440736, guid: 96e71a53db8ab094081c88c3bf66e88f, type: 3}
+  gun_renderer: {fileID: 230667112}
   ground_layer:
     serializedVersion: 2
     m_Bits: 8
   timer: {fileID: 93960262}
+  falling_gun: {fileID: 4082271148810376761, guid: a201f44a1fc27cf4085f8b5b7e58e61e, type: 3}
+  hand: {fileID: 989342406, guid: 598d2190f36058d43aa33b7d4d4dfbc8, type: 3}
+  gun_hand: {fileID: 1847460230, guid: 598d2190f36058d43aa33b7d4d4dfbc8, type: 3}
+  empty_gun: {fileID: -1136347182, guid: 598d2190f36058d43aa33b7d4d4dfbc8, type: 3}
   active: 1
   arm_offset: {x: -0.05, y: -0.17}
   tip_offset: {x: 0.75, y: 0.27}
   recoil_amplitude: 20
   recoil_return_speed: 0.5
-  max_inaccuracy: 20
-  stability_percent: 0.1
+  max_inaccuracy: 15
+  stability_percent: 0.25
   reset_frames: 125
   fire_rate: 0.3
+  current_ammo: 10
+  max_ammo: 10
+  reloading: 0
+  reload_time: 0
+  max_reload_time: 2
 --- !u!212 &230667112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -429,7 +439,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1539324618, guid: 7c9b2a80c04404944a0e63ddd87d4587, type: 3}
+  m_Sprite: {fileID: 1847460230, guid: 598d2190f36058d43aa33b7d4d4dfbc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19327,8 +19337,9 @@ MonoBehaviour:
   current_ammo: 0
   background_transform: {fileID: 380592274}
   foreground_transform: {fileID: 916999432}
+  text_box: {fileID: 729649751}
   bullet_sprite: {fileID: 380592275}
-  bottom: 41
+  gun: {fileID: 230667111}
 --- !u!213 &1487440379
 Sprite:
   m_ObjectHideFlags: 0
@@ -24730,7 +24741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
   main_camera: {fileID: 519420031}
-  spawn: 0
+  spawn: 1
   spawn_speed: 1
   spawn_height: 13
 --- !u!4 &1789287405

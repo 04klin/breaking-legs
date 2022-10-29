@@ -20,10 +20,7 @@ public class bullet_script : MonoBehaviour
     [SerializeField] private float angle;
 
     [Header("Duration of flight")]
-    [SerializeField] private bool destroy;
     [SerializeField] private bool draw_hitbox;
-    [SerializeField] private float flight_time_max;
-    [SerializeField] private float flight_time;
 
     private Vector2 length_to_edge;
     private Vector2 top_right;
@@ -60,8 +57,6 @@ public class bullet_script : MonoBehaviour
             return;
 
         rb.velocity = direction_vector * bullet_speed;
-
-        flight_time += Time.deltaTime;
 
         //create own rotated boxcast that is composed of 4 raycasts that returns true if it hits something.
         //use "boxcast" to detect bullet collision
@@ -109,15 +104,6 @@ public class bullet_script : MonoBehaviour
         //used to store back of bullet coords 1 frame behind
         top_left = rotate_point(new Vector2(-length_to_edge.x, length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
         bottom_left = rotate_point(new Vector2(-length_to_edge.x, -length_to_edge.y), angle * Mathf.Deg2Rad) + new Vector2(transform.position.x, transform.position.y);
-
-
-
-
-
-        if (flight_time >= flight_time_max && destroy)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
 
