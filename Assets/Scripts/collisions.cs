@@ -13,16 +13,9 @@ public class collisions : MonoBehaviour
     public timer_bar_control time_bar;
     public spawn_enemy spawner;
     public death death;
-    
-    
+    public AudioSource pickup_sound;
+    public AudioSource free_soda_sound;
 
-
-
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -47,12 +40,13 @@ public class collisions : MonoBehaviour
         if (collision.gameObject.tag == "Meth")
         {
             Destroy(collision.gameObject);
+            pickup_sound.Play();
             time_bar.set_slider_value(time_bar.get_value() + 5000);
         }
         if (collision.gameObject.tag == "Free Soda")
-        {
+        { 
             Destroy(collision.gameObject);
-
+            free_soda_sound.Play();
             spawner.changeSpawnSpeed(1f);
         }
     }

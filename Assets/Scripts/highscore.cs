@@ -15,13 +15,13 @@ public class highscore : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
+    //finds the beginning position and is the 0 score.
     void Start()
     {
         starting_point = transform.position.x;
     }
 
-    // Update is called once per frame
+    // increases score 
     void Update()
     {
         current_point = transform.position.x - starting_point;
@@ -34,10 +34,6 @@ public class highscore : MonoBehaviour
         {
             high_score = score;
         }
-    }
-    public void set_spawn(float x)
-    {
-        
     }
     public float get_score()
     { 

@@ -15,6 +15,7 @@ public class gun_script : MonoBehaviour
     public GameObject bullet;
     public LayerMask ground_layer;
     public timer_bar_control timer;
+    public AudioSource gun_sound;
 
 
 
@@ -116,8 +117,10 @@ public class gun_script : MonoBehaviour
 
         if (!inside_something && Input.GetMouseButton(0))
         {
+            
             if (time >= fire_rate)
             {
+                gun_sound.Play();
                 float shot_inaccuracy = Random.Range(-current_inaccuracy, current_inaccuracy);
 
 

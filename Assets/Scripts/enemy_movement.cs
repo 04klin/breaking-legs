@@ -13,12 +13,14 @@ public class enemy_movement : MonoBehaviour
     public BoxCollider2D enemy_collider;
     public GameObject questionable_substance;
     public GameObject enemy;
+    public GameObject enemy_hit;
 
-  
+
     public void make_meth()
-    {        
-            Instantiate(questionable_substance, new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.y), enemy.transform.rotation);
-            Destroy(enemy);
+    { 
+        Instantiate(questionable_substance, new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.y), enemy.transform.rotation);
+        Destroy(enemy);
+        Instantiate(enemy_hit);
         
     }
     // Start is called before the first frame update

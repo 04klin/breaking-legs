@@ -13,6 +13,13 @@ public class movement : MonoBehaviour
     public LayerMask enemy_layer;
     public Animator player_animate;
     public timer_bar_control timer_bar;
+    public AudioSource jump_sound;
+
+
+
+    
+
+
 
     [Header("Character Atributes")]
     [SerializeField] private float speed = 5f;
@@ -77,6 +84,7 @@ public class movement : MonoBehaviour
 
         if (Input.GetKey("space") && !jumping && timer_bar.get_percent_full() > allowed_jump_percent)
         {
+            jump_sound.Play();
             velocity = Vector2.up * jump_height;
             jumping = true;
             timer_bar.add_percent(-percent_jump_subtract);

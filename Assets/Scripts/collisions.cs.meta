@@ -3,7 +3,14 @@ guid: e824af18356117744901e8dfb3cf7d40
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player_collider: {instanceID: 0}
+  - time_bar: {instanceID: 0}
+  - spawner: {instanceID: 0}
+  - death: {instanceID: 0}
+  - pickup_sound: {instanceID: 0}
+  - free_soda_sound: {instanceID: 0}
+  - enemy_hit: {fileID: 6031563768024730768, guid: 4b89fcfa99a7e744a95195fb0d95d711, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
