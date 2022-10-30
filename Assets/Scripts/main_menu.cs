@@ -10,7 +10,7 @@ public class main_menu : MonoBehaviour
     public void play_game()
     {
         SceneManager.LoadScene(1);
-        Time.timeScale = 1;
+        pause_menu.resume();
     }
 
     //closes game

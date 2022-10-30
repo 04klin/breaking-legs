@@ -19,13 +19,13 @@ public class pause_menu : MonoBehaviour
     {
 
         pause_menu_obj.SetActive(true);
-        pause_test();
+        pause();
     }
     //resumes game
     public void resume_game()
     {
         pause_menu_obj.SetActive(false);
-        resume_test();
+        resume();
     }
     //goes to main menu
     public void main_menu()
@@ -40,12 +40,12 @@ public class pause_menu : MonoBehaviour
             pause_game();
         }
     }
-    public static void pause_test()
+    public static void pause()
     {
         Time.timeScale = 0;
         paused = true;
     }
-    public static void resume_test()
+    public static void resume()
     {
         Time.timeScale = 1;
         paused = false;

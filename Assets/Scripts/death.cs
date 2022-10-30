@@ -16,6 +16,7 @@ public class death : MonoBehaviour
     public TMP_Text high_score;
     public highscore get_high_score;
     public AudioSource death_sound;
+    public GameObject game_ui;
 
 
 
@@ -32,9 +33,10 @@ public class death : MonoBehaviour
     {
         death_sound.Play(); 
         death_controller.SetActive(true);
+        game_ui.SetActive(false);
         score.text = "" + Math.Round(get_high_score.get_score(),1);
         high_score.text = "" + Math.Round(get_high_score.get_high_score(), 1);
-        pause_menu.pause_test();
+        pause_menu.pause();
      
     
     }
@@ -42,7 +44,7 @@ public class death : MonoBehaviour
     public void restart_game()
     {
         death_controller.SetActive(false);
-        pause_menu.resume_test();
+        pause_menu.resume();
   
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
