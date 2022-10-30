@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,15 +19,13 @@ public class pause_menu : MonoBehaviour
     {
 
         pause_menu_obj.SetActive(true);
-        Time.timeScale = 0;
-        paused = true;
+        pause_test();
     }
     //resumes game
     public void resume_game()
     {
         pause_menu_obj.SetActive(false);
-        Time.timeScale = 1;
-        paused = false;
+        resume_test();
     }
     //goes to main menu
     public void main_menu()
@@ -40,5 +39,15 @@ public class pause_menu : MonoBehaviour
         {
             pause_game();
         }
+    }
+    public static void pause_test()
+    {
+        Time.timeScale = 0;
+        paused = true;
+    }
+    public static void resume_test()
+    {
+        Time.timeScale = 1;
+        paused = false;
     }
 }

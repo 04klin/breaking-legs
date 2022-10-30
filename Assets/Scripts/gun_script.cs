@@ -20,6 +20,7 @@ public class gun_script : MonoBehaviour
     public Sprite hand;
     public Sprite gun_hand;
     public Sprite empty_gun;
+    public AudioSource gun_sound;
 
 
 
@@ -156,6 +157,7 @@ public class gun_script : MonoBehaviour
         {
             if (time >= fire_rate && current_ammo > 0)
             {
+                gun_sound.Play();
                 float shot_inaccuracy = Random.Range(-current_inaccuracy, current_inaccuracy);
 
 

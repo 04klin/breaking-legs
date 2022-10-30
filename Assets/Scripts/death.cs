@@ -2,25 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.SceneManagement;
 
 public class death : MonoBehaviour
 {
 
+    public GameObject death_controller;
+    public GameObject main_character;
+    public TMP_Text score;
+    public TMP_Text high_score;
+    public highscore get_high_score;
+    public AudioSource death_sound;
 
-    public BoxCollider2D player_collider;
-    public counter counting;
-    public timer_bar_control time_bar;
-    public spawn_enemy spawner;
 
 
 
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -29,32 +28,35 @@ public class death : MonoBehaviour
     }
 
     //trigger from collision.
-    private void OnCollisionEnter2D(Collision2D collision)
+   public void run()
     {
-        //change to death within the if statement
-        if(collision.gameObject.tag == "Enemy")
-        {
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            counting.run();
-            
-        }
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Meth")
-        {
-            Destroy(collision.gameObject);
-            time_bar.set_slider_value(time_bar.get_value() + 5000);
-        }
-        if (collision.gameObject.tag == "Free Soda")
-        {
-            Destroy(collision.gameObject);
-
-            spawner.changeSpawnSpeed(1f);
-        }
+        death_sound.Play(); 
+        death_controller.SetActive(true);
+        score.text = "" + Math.Round(get_high_score.get_score(),1);
+        high_score.text = "" + Math.Round(get_high_score.get_high_score(), 1);
+        pause_menu.pause_test();
+     
+    
     }
 
+    public void restart_game()
+    {
+        death_controller.SetActive(false);
+        pause_menu.resume_test();
+  
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    //goes to main menu
+    public void main_menu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void quit_game()
+    {
+        Application.Quit();
+    }
+
+    
 
 
 }

@@ -28,6 +28,7 @@ public class bullet_script : MonoBehaviour
     private Vector2 top_left;
     private Vector2 bottom_left;
 
+    
 
 
 
