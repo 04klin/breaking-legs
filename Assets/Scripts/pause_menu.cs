@@ -9,6 +9,7 @@ public class pause_menu : MonoBehaviour
 
     public static bool paused = false;
     [SerializeField] private GameObject pause_menu_obj;
+    public death music_delete;
     //quits game
     public void quit_game()
     {
@@ -30,7 +31,8 @@ public class pause_menu : MonoBehaviour
     //goes to main menu
     public void main_menu()
     {
-        SceneManager.LoadScene(0);
+        music_delete.main_menu();
+
     }
 
     void Update()

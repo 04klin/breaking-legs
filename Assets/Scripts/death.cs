@@ -19,6 +19,24 @@ public class death : MonoBehaviour
     public GameObject game_ui;
 
 
+    public AudioSource ingame_music;
+    public static int play_music = 0;
+    public GameObject[] list;
+
+
+    private void Start()
+    {
+        list = GameObject.FindGameObjectsWithTag("ingame music");
+        ingame_music = GameObject.FindGameObjectsWithTag("ingame music")[0].GetComponent<AudioSource>();
+        if (play_music == 0)
+        {
+            Debug.Log("remakes");
+            ingame_music.Play();
+            DontDestroyOnLoad(ingame_music);
+        }
+        play_music++;
+        
+    }
 
 
 
@@ -47,11 +65,15 @@ public class death : MonoBehaviour
         pause_menu.resume();
   
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
     //goes to main menu
     public void main_menu()
-    {
+    { 
+        
+        Destroy(ingame_music.gameObject);
         SceneManager.LoadScene(0);
+
     }
     public void quit_game()
     {
