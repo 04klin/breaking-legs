@@ -17,7 +17,7 @@ public class collisions : MonoBehaviour
     public AudioSource free_soda_sound;
 
 
-
+    public soda_spawn soda_spawner;
 
 
 
@@ -50,6 +50,9 @@ public class collisions : MonoBehaviour
         if (collision.gameObject.tag == "Free Soda")
         { 
             Destroy(collision.gameObject);
+            Debug.Log("Destroyed");
+            soda_spawner.spawn();
+            Debug.Log("spawned");
             free_soda_sound.Play();
             spawner.changeSpawnSpeed(1f);
         }

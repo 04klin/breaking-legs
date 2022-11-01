@@ -16226,6 +16226,7 @@ MonoBehaviour:
   death: {fileID: 834151945}
   pickup_sound: {fileID: 465652997}
   free_soda_sound: {fileID: 1257014483}
+  soda_spawner: {fileID: 1088175879}
 --- !u!95 &653722768
 Animator:
   serializedVersion: 4
@@ -16828,7 +16829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.836975, y: 41}
+  m_AnchoredPosition: {x: -16.837, y: 41}
   m_SizeDelta: {x: -494, y: -427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835523182
@@ -17001,6 +17002,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916999431}
   m_CullTransparentMesh: 1
+--- !u!1 &1088175878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1088175880}
+  - component: {fileID: 1088175879}
+  m_Layer: 0
+  m_Name: Soda Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1088175879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088175878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e942d991eeb772a4cb93a39a80eef5f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soda: {fileID: 2689066380859578111, guid: e0e277ad1c8bc9d44839af175e33fb04, type: 3}
+  distance: 10
+--- !u!4 &1088175880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088175878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.096504, y: 2.0136065, z: 10.084538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1257014481
 GameObject:
   m_ObjectHideFlags: 0
@@ -20575,7 +20622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.837158, y: -57}
+  m_AnchoredPosition: {x: -16.837189, y: -57}
   m_SizeDelta: {x: -494, y: -427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402189470
@@ -26112,7 +26159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.837158, y: -159}
+  m_AnchoredPosition: {x: -16.837189, y: -159}
   m_SizeDelta: {x: -494, y: -427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681062440
