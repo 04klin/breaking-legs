@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b5eee8296dba7743b67b364c0147e5e
+guid: f2492259a445462448bc28800778e9b8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,148 +105,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Billy Updated_0
+      name: meth_addict_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 3, w: 16}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880beadbceff841439176d81952d054d
+      internalID: 1380829858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meth_addict_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 3, w: 16}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08bb052a6a528764fb3dfa251b61e19a
+      internalID: 845521964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meth_addict_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 16}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cdbbc2f3bf9fd84f8ef77ecacd5d8c0
+      internalID: 1307650183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meth_addict_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 3, w: 16}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18abc3c9e850ec4ca529e599e3d00e8
+      internalID: 1225125743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meth_addict_4
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 0, z: 7, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b4d7d2fff1cc964ebe6c1100aab0efd
-      internalID: 1516464675
+      spriteID: 7877eaa4881713e4f839590c3469957e
+      internalID: 1371394587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Billy Updated_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24397de297ef8bf41a34bafe86eb993d
-      internalID: -662850362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Billy Updated_2
+      name: meth_addict_5
       rect:
         serializedVersion: 2
         x: 32
         y: 32
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 0, z: 7, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99f9b6e03a88cac4cacc535860251a18
-      internalID: -1626124004
+      spriteID: 9c9e1bc14067b3b40b008bb5a6724b0a
+      internalID: 439162499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Billy Updated_3
+      name: meth_addict_6
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 32
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 0, z: 7, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76c51fcb98c056a49bb64c6d387d3b18
-      internalID: -617864812
+      spriteID: a0c1eb9ed35a8da4199f6df7bc66a9a8
+      internalID: -918994703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Billy Updated_4
+      name: meth_addict_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 0, z: 7, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9119bbb4cdc55974a94b8b20c4c7a31d
-      internalID: -202375137
+      spriteID: c8657466e180b8a4f81096662f89fcb6
+      internalID: 2066819811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Billy Updated_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 639568de7ec721a40a70146f62c502c0
-      internalID: 967465159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Billy Updated_6
+      name: meth_addict_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 0, z: 8, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bf4a608a1b66fd4cbf23372d5250dcc
-      internalID: -1677429556
+      spriteID: 6292793347556e04db081c5aad0783c3
+      internalID: 1872600313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meth_addict_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 0, z: 4, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ef2b5d9d61d2b44b3b9a3459c186d0
+      internalID: -994457107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meth_addict_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 0, z: 0, w: 16}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c994503c92df81e47a9314a9f9af6ef1
+      internalID: -920291983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meth_addict_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 20}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12a6d7712cd916439c31cab970a69cc
+      internalID: -2135830122
       vertices: []
       indices: 
       edges: []
@@ -262,13 +367,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Billy Updated_5: 967465159
-      Billy Updated_4: -202375137
-      Billy Updated_0: 1516464675
-      Billy Updated_1: -662850362
-      Billy Updated_2: -1626124004
-      Billy Updated_6: -1677429556
-      Billy Updated_3: -617864812
+      meth_addict_5: 439162499
+      meth_addict_4: 1371394587
+      meth_addict_3: 1225125743
+      meth_addict_6: -918994703
+      meth_addict_8: 1872600313
+      meth_addict_9: -994457107
+      meth_addict_2: 1307650183
+      meth_addict_1: 845521964
+      meth_addict_0: 1380829858
+      meth_addict_11: -2135830122
+      meth_addict_10: -920291983
+      meth_addict_7: 2066819811
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

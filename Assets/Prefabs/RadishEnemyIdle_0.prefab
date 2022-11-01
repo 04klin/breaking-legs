@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 33711243039343390}
   - component: {fileID: 33711243039343391}
+  - component: {fileID: 33711243039343363}
   - component: {fileID: 33711243039343388}
   - component: {fileID: 33711243039343360}
   - component: {fileID: 33711243039343361}
-  - component: {fileID: 33711243039343363}
   m_Layer: 6
   m_Name: RadishEnemyIdle_0
   m_TagString: Enemy
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 33711243039343389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.02, y: 0.46, z: 0}
-  m_LocalScale: {x: -1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: -1.6, y: 1.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1654215725, guid: 5fe3ec006747da54da8c1a8ba8f9dd2f, type: 3}
+  m_Sprite: {fileID: 1371394587, guid: f2492259a445462448bc28800778e9b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,6 +88,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &33711243039343363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33711243039343389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73dd773e647f6984abc4bcc22f157731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  rb: {fileID: 33711243039343360}
+  ground_layer:
+    serializedVersion: 2
+    m_Bits: 8
+  enemy_collider: {fileID: 33711243039343361}
+  questionable_substance: {fileID: 2618289995871114326, guid: 9e979bdac8dc7fd4397f59a1d954c0e6, type: 3}
+  enemy: {fileID: 33711243039343389}
+  enemy_hit: {fileID: 7559145104773926089, guid: 9f6d9af16950de64386597ae375a05d5, type: 3}
+  sprite_renderer: {fileID: 33711243039343391}
+  enemy_box: {fileID: 33711243039343361}
+  landing_timer: 0
+  max_landing_time: 5
+  enemy_animate: {fileID: 33711243039343388}
 --- !u!95 &33711243039343388
 Animator:
   serializedVersion: 4
@@ -144,7 +170,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: -0.06}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.40625, y: 0, z: 0.21875, w: 0.0625}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
@@ -155,24 +181,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.88}
   m_EdgeRadius: 0
---- !u!114 &33711243039343363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33711243039343389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73dd773e647f6984abc4bcc22f157731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  rb: {fileID: 33711243039343360}
-  ground_layer:
-    serializedVersion: 2
-    m_Bits: 8
-  enemy_collider: {fileID: 33711243039343361}
-  questionable_substance: {fileID: 2618289995871114326, guid: 9e979bdac8dc7fd4397f59a1d954c0e6, type: 3}
-  enemy: {fileID: 33711243039343389}
-  enemy_hit: {fileID: 7559145104773926089, guid: 9f6d9af16950de64386597ae375a05d5, type: 3}
