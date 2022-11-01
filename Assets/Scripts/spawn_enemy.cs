@@ -14,16 +14,13 @@ public class spawn_enemy : MonoBehaviour
 
     [Header("Spawner Attributes")]
     [SerializeField] private bool spawn;
-    [SerializeField] private float spawn_speed;
+    public float spawn_speed;
     [SerializeField] private float spawn_height;
     private float time = 0;
 
 
 
-    public void changeSpawnSpeed(float x)
-    {
-        spawn_speed = x;
-    }    
+   
 
     private void Update()
     {
@@ -31,8 +28,8 @@ public class spawn_enemy : MonoBehaviour
             return;
 
         time += Time.deltaTime;
-        //creates an enemy
-        if (time >spawn_speed)
+        //creates an # of enemy per second
+        if (time >(1/spawn_speed))
         {
             //finds the pos of camera and its size
             float height = 2f * main_camera.orthographicSize;

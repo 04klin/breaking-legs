@@ -54,7 +54,7 @@ public class collisions : MonoBehaviour
             soda_spawner.spawn();
             Debug.Log("spawned");
             free_soda_sound.Play();
-            spawner.changeSpawnSpeed(1f);
+            
         }
     }
 

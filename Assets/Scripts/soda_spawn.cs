@@ -5,9 +5,15 @@ using UnityEngine;
 public class soda_spawn : MonoBehaviour
 {
     public GameObject soda;
-    [SerializeField] private int distance;
+    public spawn_enemy enemy; 
+    public gun_script gun;
+    [SerializeField] private int interval;
+    [SerializeField] private int max_bullet_increase;
+    [SerializeField] private float reload_decrease_percent;
+    [SerializeField] private float enemy_spawnrate_increase;
     // Start is called before the first frame update
-    private int position;
+    private int position;  
+  
     void Start()
     {
         spawn();
@@ -18,10 +24,15 @@ public class soda_spawn : MonoBehaviour
     {
         
     }
-
+    //increases stats
     public void spawn()
     {
         Instantiate(soda, new Vector3(position,0,transform.position.z), transform.rotation);
-        position += distance;
+        position += interval;
+        gun.max_ammo += max_bullet_increase;
+        gun.max_reload_time =gun.max_reload_time* (1 - reload_decrease_percent);
+        enemy.spawn_speed += enemy_spawnrate_increase;
+
+
     }
 }
