@@ -35,7 +35,7 @@ public class spawn_enemy : MonoBehaviour
             float height = 2f * main_camera.orthographicSize;
             float width = height * main_camera.aspect;
             float left_side = main_camera.transform.position.x - width/2;
-            float right_side = main_camera.transform.position.x + width/2 ;
+            float right_side = main_camera.transform.position.x + width ;
           //replaces min and max with the border if it surpasses it.
 
             
