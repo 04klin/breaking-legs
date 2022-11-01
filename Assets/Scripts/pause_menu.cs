@@ -28,7 +28,7 @@ public class pause_menu : MonoBehaviour
         pause_menu_obj.SetActive(false);
         resume();
     }
-    //goes to main menu
+    //uses death button main menu
     public void main_menu()
     {
         music_delete.main_menu();

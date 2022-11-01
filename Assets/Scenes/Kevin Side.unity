@@ -17032,7 +17032,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soda: {fileID: 2689066380859578111, guid: e0e277ad1c8bc9d44839af175e33fb04, type: 3}
-  distance: 10
+  enemy: {fileID: 1789287404}
+  gun: {fileID: 230667111}
+  interval: 30
+  max_bullet_increase: 2
+  reload_decrease_percent: 0.03
+  enemy_spawnrate_increase: 1
 --- !u!4 &1088175880
 Transform:
   m_ObjectHideFlags: 0
