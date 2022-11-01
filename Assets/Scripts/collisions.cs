@@ -50,9 +50,8 @@ public class collisions : MonoBehaviour
         if (collision.gameObject.tag == "Free Soda")
         { 
             Destroy(collision.gameObject);
-            Debug.Log("Destroyed");
             soda_spawner.spawn();
-            Debug.Log("spawned");
+            soda_spawner.upgrade();
             free_soda_sound.Play();
             
         }
