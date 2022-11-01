@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 8ccd1b876321f3b429ceee25f9149b7e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Scene.unity
     guid: b18bbc3e936bddc479839064b3e794a3
+  - enabled: 1
+    path: Assets/Scenes/Kevin Side.unity
+    guid: e0afe574239284a4892fcd71f1ebbbf1
   m_configObjects: {}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7559145104773926090}
   - component: {fileID: 7559145104773926091}
-  - component: {fileID: 546884691173291529}
+  - component: {fileID: 3408753994233025945}
   m_Layer: 0
   m_Name: enemy_hit_sound
   m_TagString: Untagged
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &546884691173291529
+--- !u!114 &3408753994233025945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
