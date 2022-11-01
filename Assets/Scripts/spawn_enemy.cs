@@ -8,17 +8,17 @@ using static UnityEngine.GraphicsBuffer;
 
 public class spawn_enemy : MonoBehaviour
 {
-
+    [Header("Components needed")]
     public GameObject enemy;
-    private float time = 0;
-    
     public Camera main_camera;
+
+    [Header("Spawner Attributes")]
     [SerializeField] private bool spawn;
     [SerializeField] private float spawn_speed;
     [SerializeField] private float spawn_height;
-    
+    private float time = 0;
 
-    
+
 
     public void changeSpawnSpeed(float x)
     {
@@ -44,7 +44,7 @@ public class spawn_enemy : MonoBehaviour
             
             if(spawn)
             {
-                Instantiate(enemy, new Vector3(Random.Range(left_side, right_side), spawn_height, 0), enemy.transform.rotation);
+                Instantiate(enemy, new Vector3(Random.Range(left_side, right_side), spawn_height, Random.Range(0,1)), enemy.transform.rotation);
                 
             }
             time = 0;

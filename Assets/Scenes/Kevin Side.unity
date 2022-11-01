@@ -16293,7 +16293,7 @@ MonoBehaviour:
   speed: 10
   jump_height: 5
   allowed_jump_percent: 0.5
-  percent_jump_subtract: 0.01
+  subtract_jump_percent: 0
 --- !u!61 &653722771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16709,7 +16709,6 @@ MonoBehaviour:
   death_sound: {fileID: 1540645340}
   game_ui: {fileID: 1723689357}
   ingame_music: {fileID: 16429339}
-  list: []
 --- !u!114 &834151946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16829,7 +16828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.837, y: 41}
+  m_AnchoredPosition: {x: -16.836975, y: 41}
   m_SizeDelta: {x: -494, y: -427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835523182
@@ -20576,7 +20575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.837189, y: -57}
+  m_AnchoredPosition: {x: -16.837158, y: -57}
   m_SizeDelta: {x: -494, y: -427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1402189470
@@ -26113,7 +26112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.837189, y: -159}
+  m_AnchoredPosition: {x: -16.837158, y: -159}
   m_SizeDelta: {x: -494, y: -427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1681062440

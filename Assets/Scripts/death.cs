@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class death : MonoBehaviour
 {
-
+    [Header("Components needed")]
     public GameObject death_controller;
     public GameObject main_character;
     public TMP_Text score;
@@ -17,20 +17,15 @@ public class death : MonoBehaviour
     public highscore get_high_score;
     public AudioSource death_sound;
     public GameObject game_ui;
-
-
     public AudioSource ingame_music;
     public static int play_music = 0;
-    public GameObject[] list;
 
 
     private void Start()
     {
-        list = GameObject.FindGameObjectsWithTag("ingame music");
         ingame_music = GameObject.FindGameObjectsWithTag("ingame music")[0].GetComponent<AudioSource>();
         if (play_music == 0)
         {
-            Debug.Log("remakes");
             ingame_music.Play();
             DontDestroyOnLoad(ingame_music);
         }

@@ -30,11 +30,11 @@ public class gun_script : MonoBehaviour
     [SerializeField] private Vector2 arm_offset;
     [SerializeField] private Vector2 tip_offset;
     private Vector2 rotated_tip_offset = new Vector2(0,0);
-
     private float angle = 0;
     private float counter_angle;
     private float angle_deg = 0;
     private Vector2 tip_point;
+    private int flipper = 1;
 
     [Header("Recoil and Inaccuracy Controls")]
     [SerializeField] private int recoil_amplitude;
@@ -45,6 +45,7 @@ public class gun_script : MonoBehaviour
     [SerializeField] private float stability_percent;
     [SerializeField] private float reset_frames;
     [SerializeField] private float fire_rate;
+    private float shoot_time;
 
     [Header("Reload and ammo")]
     public int current_ammo;
@@ -54,11 +55,6 @@ public class gun_script : MonoBehaviour
     public float max_reload_time;
     
     
-
-
-    private float time;
-    private int flipper = 1;
-
 
     private void Start()
     {
@@ -147,7 +143,7 @@ public class gun_script : MonoBehaviour
         //end of mouse alignment section
 
         //start of bullet and recoil
-        time += Time.deltaTime;
+        shoot_time += Time.deltaTime;
         bool inside_something = Physics2D.Linecast(tip_point, tip_point,ground_layer);
         
         current_inaccuracy = timer.get_percent_full(stability_percent) * max_inaccuracy;
@@ -155,7 +151,7 @@ public class gun_script : MonoBehaviour
 
         if (!inside_something && Input.GetMouseButton(0)  && !reloading)
         {
-            if (time >= fire_rate && current_ammo > 0)
+            if (shoot_time >= fire_rate && current_ammo > 0)
             {
                 gun_sound.Play();
                 float shot_inaccuracy = Random.Range(-current_inaccuracy, current_inaccuracy);
@@ -169,17 +165,17 @@ public class gun_script : MonoBehaviour
 
                 current_ammo--;
 
-                time = 0;
+                shoot_time = 0;
             }
 
-            if (time >= fire_rate && current_ammo == 0)
+            if (shoot_time >= fire_rate && current_ammo == 0)
             {
                 reload();
             }
         }
         else
         {
-            time = fire_rate;
+            shoot_time = fire_rate;
         }
 
         //end of bullet and recoil

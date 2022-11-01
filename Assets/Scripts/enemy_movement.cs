@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class enemy_movement : MonoBehaviour
 {
-    public float speed = 3f;
+    [Header("Components needed")]
     private Transform billy_pos;
     public Rigidbody2D rb;
-    private Vector2 velocity;
-    public LayerMask ground_layer; 
+    public LayerMask ground_layer;
     public BoxCollider2D enemy_collider;
     public GameObject questionable_substance;
-    public GameObject enemy;
-    public GameObject enemy_hit;
+    public GameObject enemy_hit_sound;
     public SpriteRenderer sprite_renderer;
     public BoxCollider2D enemy_box;
+    public Animator enemy_animate;
 
+    [Header("Enemy Attributes")]
+    public float speed = 3f;
+    private Vector2 velocity;
     private enum animate_states
     {
         falling,
@@ -24,18 +27,12 @@ public class enemy_movement : MonoBehaviour
         crawling
     }
     private animate_states current_state = animate_states.falling;
-    public float landing_timer = 0;
+    private float landing_timer = 0;
     public float max_landing_time;
-    public Animator enemy_animate;
+    
 
 
-    public void make_meth()
-    { 
-        Instantiate(questionable_substance, new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.y), enemy.transform.rotation);
-        Destroy(enemy);
-        Instantiate(enemy_hit);
-        
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -118,5 +115,13 @@ public class enemy_movement : MonoBehaviour
         bool what = Physics2D.BoxCast(enemy_collider.bounds.center, enemy_collider.bounds.size, 0f, Vector2.down, 0.1f, ground_layer);
 
         return what;
+    }
+
+    public void make_meth()
+    {
+        Instantiate(questionable_substance, new Vector3(transform.position.x, transform.position.y, transform.position.y), transform.rotation);
+        Destroy(this.gameObject);
+        Instantiate(enemy_hit_sound);
+
     }
 }

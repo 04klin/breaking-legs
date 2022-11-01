@@ -100,20 +100,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73dd773e647f6984abc4bcc22f157731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
   rb: {fileID: 33711243039343360}
   ground_layer:
     serializedVersion: 2
     m_Bits: 8
   enemy_collider: {fileID: 33711243039343361}
   questionable_substance: {fileID: 2618289995871114326, guid: 9e979bdac8dc7fd4397f59a1d954c0e6, type: 3}
-  enemy: {fileID: 33711243039343389}
-  enemy_hit: {fileID: 7559145104773926089, guid: 9f6d9af16950de64386597ae375a05d5, type: 3}
+  enemy_hit_sound: {fileID: 7559145104773926089, guid: 9f6d9af16950de64386597ae375a05d5, type: 3}
   sprite_renderer: {fileID: 33711243039343391}
   enemy_box: {fileID: 33711243039343361}
-  landing_timer: 0
-  max_landing_time: 5
   enemy_animate: {fileID: 33711243039343388}
+  speed: 3
+  max_landing_time: 5
 --- !u!95 &33711243039343388
 Animator:
   serializedVersion: 4

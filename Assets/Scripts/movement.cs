@@ -16,18 +16,11 @@ public class movement : MonoBehaviour
     public AudioSource jump_sound;
 
 
-
-    
-
-
-
     [Header("Character Atributes")]
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float jump_height = 5f;
-    [SerializeField] private float allowed_jump_percent = .1f;
-    [SerializeField] private float percent_jump_subtract = .1f;
-
-
+    public float speed;
+    public float jump_height;
+    public float allowed_jump_percent;
+    public float subtract_jump_percent;
     private Vector2 velocity;
     private bool grounded = true;
     private bool jumping = false;
@@ -43,11 +36,6 @@ public class movement : MonoBehaviour
 
    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -87,7 +75,7 @@ public class movement : MonoBehaviour
             jump_sound.Play();
             velocity = Vector2.up * jump_height;
             jumping = true;
-            timer_bar.add_percent(-percent_jump_subtract);
+            timer_bar.add_percent(-subtract_jump_percent);
         }
 
 
