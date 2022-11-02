@@ -44,7 +44,7 @@ public class movement : MonoBehaviour
             return;
 
         velocity = new Vector2(0, rb.velocity.y);
-
+        //move left and right
         if (Input.GetKey("a"))
         {   
             velocity += Vector2.left;
@@ -69,7 +69,7 @@ public class movement : MonoBehaviour
             jumping = !grounded;
         }
 
-
+        //the jump condition
         if (Input.GetKey("space") && !jumping && timer_bar.get_percent_full() > allowed_jump_percent)
         {
             jump_sound.Play();

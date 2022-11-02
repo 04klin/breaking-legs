@@ -21,7 +21,7 @@ public class death : MonoBehaviour
     public AudioSource ingame_music;
     public static int play_music = 0;
 
-
+    //plays music and doesnt restart when you die
     private void Start()
     {
         ingame_music = GameObject.FindGameObjectsWithTag("ingame music")[0].GetComponent<AudioSource>();
@@ -31,14 +31,6 @@ public class death : MonoBehaviour
             DontDestroyOnLoad(ingame_music);
         }
         play_music++;
-        
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 

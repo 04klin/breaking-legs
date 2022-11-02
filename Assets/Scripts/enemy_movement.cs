@@ -116,7 +116,7 @@ public class enemy_movement : MonoBehaviour
 
         return what;
     }
-
+    //hmmm... maybe it shouldn't be called this
     public void make_meth()
     {
         Instantiate(questionable_substance, new Vector3(transform.position.x, transform.position.y, transform.position.y), transform.rotation);
