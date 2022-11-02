@@ -17,6 +17,7 @@ public class death : MonoBehaviour
     public highscore get_high_score;
     public AudioSource death_sound;
     public GameObject game_ui;
+    public GameObject instructions;
     public AudioSource ingame_music;
     public static int play_music = 0;
 
@@ -47,6 +48,7 @@ public class death : MonoBehaviour
         death_sound.Play(); 
         death_controller.SetActive(true);
         game_ui.SetActive(false);
+        instructions.SetActive(false);
         score.text = "" + Math.Round(get_high_score.get_score(),1);
         high_score.text = "" + Math.Round(get_high_score.get_high_score(), 1);
         pause_menu.pause();

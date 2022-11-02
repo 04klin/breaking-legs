@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 33711243039343390}
   - component: {fileID: 33711243039343391}
-  - component: {fileID: 33711243039343363}
   - component: {fileID: 33711243039343388}
   - component: {fileID: 33711243039343360}
-  - component: {fileID: 33711243039343361}
+  - component: {fileID: 7368857934747182520}
   m_Layer: 6
-  m_Name: RadishEnemyIdle_0
+  m_Name: Main Menu Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,30 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &33711243039343363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33711243039343389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73dd773e647f6984abc4bcc22f157731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 33711243039343360}
-  ground_layer:
-    serializedVersion: 2
-    m_Bits: 8
-  enemy_collider: {fileID: 33711243039343361}
-  questionable_substance: {fileID: 2618289995871114326, guid: 9e979bdac8dc7fd4397f59a1d954c0e6, type: 3}
-  enemy_hit_sound: {fileID: 7559145104773926089, guid: 9f6d9af16950de64386597ae375a05d5, type: 3}
-  sprite_renderer: {fileID: 33711243039343391}
-  enemy_box: {fileID: 33711243039343361}
-  enemy_animate: {fileID: 33711243039343388}
-  speed: 3
-  max_landing_time: 5
 --- !u!95 &33711243039343388
 Animator:
   serializedVersion: 4
@@ -153,29 +128,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &33711243039343361
-BoxCollider2D:
+--- !u!114 &7368857934747182520
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33711243039343389}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.06}
-  m_SpriteTilingProperty:
-    border: {x: 0.40625, y: 0, z: 0.21875, w: 0.0625}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.44, y: 0.88}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff040d547a9b2df43b7ce7205dbb9b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawn: 1
+  despawn_time: 2

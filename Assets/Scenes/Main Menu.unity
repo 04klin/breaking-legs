@@ -156,7 +156,7 @@ MonoBehaviour:
   Camera: {fileID: 1441753288}
   width: 9
   height: 6
-  spawn_speed: 5
+  spawn_speed: 2.5
 --- !u!4 &155454078
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,7 +1143,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 32cd993035b6afc4780a6ce490e75957, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.305
   m_Pitch: 1
   Loop: 1
   Mute: 0
