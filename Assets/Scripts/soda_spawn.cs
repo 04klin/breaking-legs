@@ -11,6 +11,7 @@ public class soda_spawn : MonoBehaviour
     [SerializeField] private int max_bullet_increase;
     [SerializeField] private float reload_decrease_percent;
     [SerializeField] private float enemy_spawnrate_increase;
+    [SerializeField] private float spawn_height;
     // Start is called before the first frame update
     private int position;  
   
@@ -27,12 +28,17 @@ public class soda_spawn : MonoBehaviour
     //increases stats
     public void spawn()
     {
-        Instantiate(soda, new Vector3(position,0,transform.position.z), transform.rotation);
+        Instantiate(soda, new Vector3(position, spawn_height, transform.position.z), transform.rotation);
         position += interval;
-        gun.max_ammo += max_bullet_increase;
-        gun.max_reload_time =gun.max_reload_time* (1 - reload_decrease_percent);
-        enemy.spawn_speed += enemy_spawnrate_increase;
+       
 
 
     }
+    public void upgrade()
+    {
+        gun.max_ammo += max_bullet_increase;
+        gun.max_reload_time = gun.max_reload_time * (1 - reload_decrease_percent);
+        enemy.spawn_speed += enemy_spawnrate_increase;
+    }
+   
 }
