@@ -17,7 +17,7 @@ public class bullet_display : MonoBehaviour
     public TMP_Text text_box;
     public Image bullet_sprite;
     public gun_script gun;
-    private float bottom;
+    public float bottom;
 
 
     void Start()

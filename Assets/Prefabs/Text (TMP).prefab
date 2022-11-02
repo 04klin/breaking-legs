@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "+2 bullets \n -0.03% reload time \n +0.3 enemies per sec"
+  m_text: "+2 bullets \n -0.03% reload time \nSpawnrate Increased"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ceb9085d85c7f5641a9ca8a4aab88283, type: 2}
   m_sharedMaterial: {fileID: 6101951321703112075, guid: ceb9085d85c7f5641a9ca8a4aab88283, type: 2}
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288388090
+    rgba: 4282371113
   m_fontColor: {r: 0.16264686, g: 0.8018868, b: 0.2468933, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
