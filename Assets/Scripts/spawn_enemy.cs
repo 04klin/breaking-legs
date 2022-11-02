@@ -23,6 +23,7 @@ public class spawn_enemy : MonoBehaviour
 
     private void Update()
     {
+        //if game is paused, nothing happens
         if (pause_menu.paused)
             return;
 
@@ -37,7 +38,7 @@ public class spawn_enemy : MonoBehaviour
             float right_side = main_camera.transform.position.x + width ;
           //replaces min and max with the border if it surpasses it.
 
-            
+            //makes enemy from above within a range
             if(spawn)
             {
                 Instantiate(enemy, new Vector3(Random.Range(left_side, right_side), spawn_height, Random.Range(0,1)), enemy.transform.rotation);

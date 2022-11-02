@@ -42,11 +42,13 @@ public class pause_menu : MonoBehaviour
             pause_game();
         }
     }
+    //time stops
     public static void pause()
     {
         Time.timeScale = 0;
         paused = true;
     }
+    //time moves
     public static void resume()
     {
         Time.timeScale = 1;

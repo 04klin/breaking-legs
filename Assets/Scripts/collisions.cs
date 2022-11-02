@@ -19,14 +19,6 @@ public class collisions : MonoBehaviour
 
     public soda_spawn soda_spawner;
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //trigger from collision.
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -18,7 +18,7 @@ public class main_menu_spawner : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    // makes enemy and deletes it after set seconds
+    // makes enemy every so seconds
     void Update()
     {
         timespawn += Time.deltaTime;
