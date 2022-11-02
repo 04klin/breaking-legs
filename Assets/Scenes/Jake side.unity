@@ -427,6 +427,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 93960263}
   speed: 7
+  death_control: {fileID: 834151945}
+  timer_blink_percent: 0.9
+  blink_color: {r: 0.7830189, g: 0.1787245, b: 0.15266399, a: 1}
+  methbar: {fileID: 433972646}
+  blink_speed: 0.7
+  test: 0
 --- !u!114 &93960263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,7 +633,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214746835
 GameObject:
@@ -16991,20 +16997,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834151944}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1898985006}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1723689358}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 683, y: 384}
+  m_SizeDelta: {x: 1366, y: 768}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &835523180
 GameObject:
   m_ObjectHideFlags: 0
@@ -17312,7 +17318,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1257014481
 GameObject:
@@ -26373,6 +26379,7 @@ RectTransform:
   - {fileID: 1467258549}
   - {fileID: 93960264}
   - {fileID: 1010190641}
+  - {fileID: 834151949}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26487,7 +26494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 33711243039343389, guid: f4faf06434f00224ba911e13fd26d02e, type: 3}
   main_camera: {fileID: 474695090}
-  spawn: 1
+  spawn: 0
   spawn_speed: 1
   spawn_height: 13
 --- !u!4 &1789287405
@@ -30618,7 +30625,7 @@ RectTransform:
   m_Children:
   - {fileID: 2070071869}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

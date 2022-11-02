@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2618289995871114324}
   - component: {fileID: 2618289995871114325}
   - component: {fileID: -2360172868608221533}
+  - component: {fileID: -8448167796774820555}
   m_Layer: 9
   m_Name: Meth
   m_TagString: Meth
@@ -160,3 +161,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-8448167796774820555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618289995871114326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff040d547a9b2df43b7ce7205dbb9b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawn: 1
+  despawn_time: 10

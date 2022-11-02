@@ -104,7 +104,7 @@ MonoBehaviour:
   sprite_renderer: {fileID: 4105360783286440751}
   excluded_layers:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 1920
   blood: {fileID: 8528734385210350470, guid: 6d9ba081544649649a2ea2525ab15610, type: 3}
   bullet_speed: 20
   mouse_location: {x: 0, y: 0}
