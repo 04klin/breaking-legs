@@ -1,9 +1,7 @@
 using JetBrains.Annotations;
-using Packages.Rider.Editor.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using UnityEditor.Profiling;
 using UnityEngine;
 using UnityEngine.UI;
 

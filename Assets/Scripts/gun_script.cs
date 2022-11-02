@@ -1,11 +1,9 @@
 using JetBrains.Annotations;
 using Newtonsoft.Json.Serialization;
-using Packages.Rider.Editor.UnitTesting;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
-using TreeEditor;
-using Unity.VisualScripting.Dependencies.Sqlite;
+using System.Timers;
 using UnityEngine;
 
 public class gun_script : MonoBehaviour
@@ -38,7 +36,8 @@ public class gun_script : MonoBehaviour
 
     [Header("Recoil and Inaccuracy Controls")]
     [SerializeField] private int recoil_amplitude;
-    [SerializeField] private float recoil_return_speed;
+    [SerializeField] private float recoil_time;
+    [SerializeField] private float max_recoil_time;
     private float recoil_angle = 0;
     [SerializeField] private int max_inaccuracy;
     private float current_inaccuracy;
@@ -131,7 +130,10 @@ public class gun_script : MonoBehaviour
 
 
         //adjust for recoil before rotating tip point
-        recoil_angle = Mathf.Max(0, recoil_angle - recoil_return_speed);
+        recoil_time += Time.deltaTime;
+        float recoil_percent = Mathf.Min(recoil_time / max_recoil_time, 1);
+
+        recoil_angle = Mathf.Lerp(recoil_amplitude, 0, recoil_percent);
         angle += recoil_angle * Mathf.Deg2Rad * flipper;
         angle_deg = angle * Mathf.Rad2Deg;
 
@@ -161,7 +163,7 @@ public class gun_script : MonoBehaviour
                 new_bullet.GetComponent<bullet_script>().flipper = flipper;
 
 
-                recoil_angle = recoil_amplitude;
+                recoil_time = 0;
 
                 current_ammo--;
 
